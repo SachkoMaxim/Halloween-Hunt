@@ -105,3 +105,4 @@ InitTestScene*.unity*
 /artifacts/
 Resources/
 Resources.meta
+.vscode/
