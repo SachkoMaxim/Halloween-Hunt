@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Movement Settings")]
+    [SerializeField] private float moveSpeed = 30f;
+
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 input;
-
-    public float moveSpeed = 30f;
 
     private static readonly int isMoving = Animator.StringToHash("isMoving");
     private static readonly int moveX = Animator.StringToHash("moveX");

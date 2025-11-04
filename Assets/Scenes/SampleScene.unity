@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000678c7978113bc20e6792de693dc9c796
+  m_ApplyToSortingLayers: 00000000678c7978113bc20e6792de693dc9c796b720fd3317c47814ad0b4edd
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -377,9 +377,9 @@ GameObject:
   - component: {fileID: 702591073}
   - component: {fileID: 702591072}
   - component: {fileID: 702591071}
-  - component: {fileID: 702591070}
   - component: {fileID: 702591074}
   - component: {fileID: 702591075}
+  - component: {fileID: 702591076}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -387,19 +387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &702591070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702591069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b8c0d0f7a876c4ca6ff166ed205b91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 30
 --- !u!50 &702591071
 Rigidbody2D:
   serializedVersion: 4
@@ -466,7 +453,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 247610129
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -773920427, guid: fa3088c82f3a9484296247af4211f4c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -547,7 +534,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.41462696}
+  m_Offset: {x: 0, y: -0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -558,8 +545,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.17074609}
+  m_Size: {x: 0.9, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &702591076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702591069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b8c0d0f7a876c4ca6ff166ed205b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 30
 --- !u!1 &963278772
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +572,8 @@ GameObject:
   - component: {fileID: 963278773}
   - component: {fileID: 963278776}
   - component: {fileID: 963278775}
-  m_Layer: 0
-  m_Name: Forest_Objects_0
+  m_Layer: 6
+  m_Name: Forest_Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,7 +618,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 247610129
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 133332741, guid: 3065c76f0d720e24285aa546ab33404a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

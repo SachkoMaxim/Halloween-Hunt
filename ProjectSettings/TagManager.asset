@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Walls
   - 
   - 
   - 
@@ -44,11 +44,20 @@ TagManager:
   - name: Background
     uniqueID: 2021231719
     locked: 0
+  - name: Walls
+    uniqueID: 872226999
+    locked: 0
   - name: Effects
     uniqueID: 1776194151
     locked: 0
-  - name: InGameObjects
+  - name: InGame
     uniqueID: 247610129
+    locked: 0
+  - name: Trajectory
+    uniqueID: 3712879533
+    locked: 0
+  - name: Projectiles
+    uniqueID: 343458839
     locked: 0
   - name: Foreground
     uniqueID: 2529675581
