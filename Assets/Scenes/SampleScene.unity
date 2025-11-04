@@ -615,6 +615,7 @@ MonoBehaviour:
   endMarker: {fileID: 0}
   markerSize: 1
   shootPoint: {fileID: 700554561}
+  playerRigidbody: {fileID: 702591071}
 --- !u!1 &963278772
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class DashedTrajectory : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform shootPoint;
+    [SerializeField] private Rigidbody2D playerRigidbody;
 
     private Camera mainCamera;
     private Vector2 shootDirection;
@@ -28,6 +29,11 @@ public class DashedTrajectory : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
+
+        if (playerRigidbody == null)
+        {
+            playerRigidbody = GetComponent<Rigidbody2D>();
+        }
 
         CreateLineRenderer();
 
@@ -39,8 +45,18 @@ public class DashedTrajectory : MonoBehaviour
 
     private void Update()
     {
-        CalculateTrajectory();
-        UpdateLineVisualization();
+        bool isPlayerMoving = playerRigidbody != null && playerRigidbody.velocity.sqrMagnitude > 0.01f;
+
+        if (isPlayerMoving)
+        {
+            SetTrajectoryVisible(false);
+        }
+        else
+        {
+            SetTrajectoryVisible(true);
+            CalculateTrajectory();
+            UpdateLineVisualization();
+        }
     }
 
     private void CalculateTrajectory()
