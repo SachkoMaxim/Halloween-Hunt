@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashedTrajectory : MonoBehaviour
+public class Trajectory : MonoBehaviour
 {
     [Header("Bullet Settings")]
-    [SerializeField] private float maxBulletDistance = 4f;
-    [SerializeField] private float startOffset = 0.4f;
-    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] public float maxBulletDistance = 4f;
+    [SerializeField] public float startOffset = 0.4f;
+    [SerializeField] public LayerMask wallLayer;
 
     [Header("Line Visualization")]
     [SerializeField] private Color lineColor = new Color(1f, 0f, 0f, 0.7f);
@@ -22,7 +22,7 @@ public class DashedTrajectory : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRigidbody;
 
     private Camera mainCamera;
-    private Vector2 shootDirection;
+    public Vector2 shootDirection;
     private Vector2 trajectoryEndPoint;
     private LineRenderer lineRenderer;
 

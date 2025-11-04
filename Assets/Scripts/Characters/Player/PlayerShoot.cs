@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerShoot : MonoBehaviour
+{
+    [Header("Shooting Settings")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private float shootCooldown = 0f;
+
+    [Header("References")]
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private Trajectory trajectory;
+
+    private float lastShootTime = -999f;
+
+    void Update()
+    {
+        bool isPlayerMoving = playerRigidbody != null && playerRigidbody.velocity.sqrMagnitude > 0.01f;
+
+        if (!isPlayerMoving && Input.GetKeyDown(KeyCode.E))
+        {
+            TryShoot();
+        }
+    }
+
+    private void TryShoot()
+    {
+        if (Time.time - lastShootTime < shootCooldown)
+        {
+            return;
+        }
+
+        if (projectilePrefab == null)
+        {
+            Debug.LogWarning("Projectile prefab is not assigned!");
+            return;
+        }
+
+        Vector2 spawnPosition = (Vector2)shootPoint.position + trajectory.shootDirection * trajectory.startOffset;
+        GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript != null)
+        {
+            projectileScript.Initialize(trajectory.shootDirection, trajectory.maxBulletDistance, trajectory.wallLayer);
+        }
+
+        lastShootTime = Time.time;
+    }
+}

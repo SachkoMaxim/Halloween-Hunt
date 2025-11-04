@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 702591075}
   - component: {fileID: 702591076}
   - component: {fileID: 702591077}
+  - component: {fileID: 702591078}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -616,6 +617,24 @@ MonoBehaviour:
   markerSize: 1
   shootPoint: {fileID: 700554561}
   playerRigidbody: {fileID: 702591071}
+  shootDirection: {x: 0, y: 0}
+--- !u!114 &702591078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702591069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa83dbb03d449034282553769ffe85af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 9092678157941521088, guid: e026e9f92b8d26d4da4b5809e0e72431, type: 3}
+  shootCooldown: 4
+  shootPoint: {fileID: 700554561}
+  playerRigidbody: {fileID: 702591071}
+  trajectory: {fileID: 702591077}
 --- !u!1 &963278772
 GameObject:
   m_ObjectHideFlags: 0
