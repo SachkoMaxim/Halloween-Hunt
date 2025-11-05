@@ -13,11 +13,11 @@ public class PlayerShoot : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform shootPoint;
     [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private Trajectory trajectory;
 
     [Header("Cooldown")]
     public UnityEvent<float> onCooldown;
-
     private float lastShootTime = -999f;
 
     void Start()
@@ -49,6 +49,7 @@ public class PlayerShoot : MonoBehaviour
             return;
         }
 
+        playerController.IsShooting();
         Vector2 spawnPosition = (Vector2)shootPoint.position + trajectory.shootDirection * trajectory.startOffset;
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 

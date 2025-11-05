@@ -710,6 +710,7 @@ MonoBehaviour:
   shootCooldown: 4
   shootPoint: {fileID: 700554561}
   playerRigidbody: {fileID: 702591071}
+  playerController: {fileID: 702591076}
   trajectory: {fileID: 702591077}
   onCooldown:
     m_PersistentCalls:

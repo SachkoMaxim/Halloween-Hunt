@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 30f;
@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private Vector2 input;
 
     private static readonly int isMoving = Animator.StringToHash("isMoving");
+    public static readonly int shoot = Animator.StringToHash("shoot");
     private static readonly int moveX = Animator.StringToHash("moveX");
     private static readonly int moveY = Animator.StringToHash("moveY");
 
@@ -36,6 +37,11 @@ public class Player : MonoBehaviour
         Vector2 movement = input * moveSpeed * Time.fixedDeltaTime;
         rb.velocity = movement;
         UpdateAnimation();
+    }
+
+    public void IsShooting()
+    {
+        animator.SetTrigger(shoot);
     }
 
     private void UpdateAnimation()
