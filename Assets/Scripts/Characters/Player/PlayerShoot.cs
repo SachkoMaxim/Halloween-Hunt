@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -13,10 +15,19 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private Trajectory trajectory;
 
+    [Header("Cooldown")]
+    public UnityEvent<float> onCooldown;
+
     private float lastShootTime = -999f;
+
+    void Start()
+    {
+        onCooldown.Invoke(0);
+    }
 
     void Update()
     {
+        onCooldown.Invoke((shootCooldown - Time.time + lastShootTime) / shootCooldown);
         bool isPlayerMoving = playerRigidbody != null && playerRigidbody.velocity.sqrMagnitude > 0.01f;
 
         if (!isPlayerMoving && Input.GetKeyDown(KeyCode.E))
