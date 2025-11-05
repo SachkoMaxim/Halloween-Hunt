@@ -25,6 +25,9 @@ public class Projectile : MonoBehaviour
         wallLayer = walls;
         startPosition = transform.position;
 
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
         if (rb != null)
         {
             rb.velocity = direction * projectileSpeed;
