@@ -20,6 +20,7 @@ public class Trajectory : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform shootPoint;
     [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private PlayerController playerController;
 
     private Camera mainCamera;
     public Vector2 shootDirection;
@@ -45,7 +46,7 @@ public class Trajectory : MonoBehaviour
 
     private void Update()
     {
-        bool isPlayerMoving = playerRigidbody != null && playerRigidbody.velocity.sqrMagnitude > 0.01f;
+        bool isPlayerMoving = playerController.IsMoving();
 
         if (isPlayerMoving)
         {

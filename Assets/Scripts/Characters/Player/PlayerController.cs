@@ -39,11 +39,6 @@ public class PlayerController : MonoBehaviour
         UpdateAnimation();
     }
 
-    public void IsShooting()
-    {
-        animator.SetTrigger(shoot);
-    }
-
     private void UpdateAnimation()
     {
         if (input != Vector2.zero)
@@ -56,5 +51,15 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool(isMoving, false);
         }
+    }
+
+    public void Shooting()
+    {
+        animator.SetTrigger(shoot);
+    }
+
+    public bool IsMoving()
+    {
+        return animator.GetBool(isMoving);
     }
 }

@@ -693,6 +693,7 @@ MonoBehaviour:
   markerSize: 1
   shootPoint: {fileID: 700554561}
   playerRigidbody: {fileID: 702591071}
+  playerController: {fileID: 702591076}
   shootDirection: {x: 0, y: 0}
 --- !u!114 &702591079
 MonoBehaviour:

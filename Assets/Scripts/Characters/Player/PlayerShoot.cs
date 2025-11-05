@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         onCooldown.Invoke((shootCooldown - Time.time + lastShootTime) / shootCooldown);
-        bool isPlayerMoving = playerRigidbody != null && playerRigidbody.velocity.sqrMagnitude > 0.01f;
+        bool isPlayerMoving = playerController.IsMoving();
 
         if (!isPlayerMoving && Input.GetKeyDown(KeyCode.E))
         {
@@ -49,7 +49,7 @@ public class PlayerShoot : MonoBehaviour
             return;
         }
 
-        playerController.IsShooting();
+        playerController.Shooting();
         Vector2 spawnPosition = (Vector2)shootPoint.position + trajectory.shootDirection * trajectory.startOffset;
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
