@@ -8,6 +8,9 @@ public class Destoryable : MonoBehaviour
     [SerializeField] private int maxHealth = 2;
     [SerializeField] private Sprite newSprite;
 
+    [Header("References")]
+    [SerializeField] private GameObject destroyedPrefab;
+
     private SpriteRenderer spriteRenderer;
     private int currentHealth;
 
@@ -15,11 +18,6 @@ public class Destoryable : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
-    }
-
-    void Update()
-    {
-
     }
 
     public void TakeDamage(int damage)
@@ -35,6 +33,7 @@ public class Destoryable : MonoBehaviour
 
             if (currentHealth <= 0)
             {
+                Instantiate(destroyedPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
