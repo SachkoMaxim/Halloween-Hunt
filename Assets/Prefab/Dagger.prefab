@@ -163,6 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 10
   maxDistance: 4
+  projectileDamage: 1
   wallLayer:
     serializedVersion: 2
     m_Bits: 64

@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [Header("Projectile Settings")]
     [SerializeField] private float projectileSpeed = 0f;
     [SerializeField] private float maxDistance = 0f;
+    [SerializeField] private int projectileDamage = 0;
     [SerializeField] private LayerMask wallLayer;
 
     private Vector2 direction;
@@ -45,6 +46,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Destoryable destroyableObj = collision.GetComponent<Destoryable>();
+        if (destroyableObj)
+        {
+            destroyableObj.TakeDamage(projectileDamage);
+            Destroy(gameObject);
+        }
+
         if (((1 << collision.gameObject.layer) & wallLayer) != 0)
         {
             Destroy(gameObject);
