@@ -28,14 +28,10 @@ public class Destoryable : MonoBehaviour
         {
             spriteRenderer.sprite = newSprite;
         }
-        else
+        else if (currentHealth <= 0)
         {
-
-            if (currentHealth <= 0)
-            {
-                Instantiate(destroyedPrefab, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-            }
+            Instantiate(destroyedPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

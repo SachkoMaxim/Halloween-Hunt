@@ -5,8 +5,8 @@ using UnityEngine;
 public class Trajectory : MonoBehaviour
 {
     [Header("Bullet Settings")]
-    [SerializeField] public float maxBulletDistance = 4f;
-    [SerializeField] public float startOffset = 0.4f;
+    [SerializeField] public float maxBulletDistance = 0f;
+    [SerializeField] public float startOffset = 0f;
     [SerializeField] public LayerMask wallLayer;
 
     [Header("Line Visualization")]
@@ -18,23 +18,16 @@ public class Trajectory : MonoBehaviour
     [SerializeField] private float markerSize = 1.0f;
 
     [Header("References")]
-    [SerializeField] private Transform shootPoint;
-    [SerializeField] private Rigidbody2D playerRigidbody;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private Player player;
 
     private Camera mainCamera;
-    public Vector2 shootDirection;
+    [HideInInspector] public Vector2 shootDirection;
     private Vector2 trajectoryEndPoint;
     private LineRenderer lineRenderer;
 
     private void Awake()
     {
         mainCamera = Camera.main;
-
-        if (playerRigidbody == null)
-        {
-            playerRigidbody = GetComponent<Rigidbody2D>();
-        }
 
         CreateLineRenderer();
 
@@ -46,7 +39,7 @@ public class Trajectory : MonoBehaviour
 
     private void Update()
     {
-        bool isPlayerMoving = playerController.IsMoving();
+        bool isPlayerMoving = player.GetIsMoving();
 
         if (isPlayerMoving)
         {
@@ -65,7 +58,7 @@ public class Trajectory : MonoBehaviour
         Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
 
-        Vector2 startPoint = shootPoint.position;
+        Vector2 startPoint = player.shootPoint.position;
         shootDirection = ((Vector2)mouseWorldPos - startPoint).normalized;
 
         Vector2 raycastStart = startPoint + shootDirection * startOffset;
@@ -89,7 +82,7 @@ public class Trajectory : MonoBehaviour
 
     private void UpdateLineVisualization()
     {
-        Vector2 startPoint = (Vector2)shootPoint.position + shootDirection * startOffset;
+        Vector2 startPoint = (Vector2)player.shootPoint.position + shootDirection * startOffset;
 
         lineRenderer.SetPosition(0, startPoint);
         lineRenderer.SetPosition(1, trajectoryEndPoint);

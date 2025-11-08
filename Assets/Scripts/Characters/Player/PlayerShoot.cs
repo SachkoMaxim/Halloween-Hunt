@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,13 +10,12 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private float shootCooldown = 0f;
 
     [Header("References")]
-    [SerializeField] private Transform shootPoint;
-    [SerializeField] private Rigidbody2D playerRigidbody;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private Player player;
     [SerializeField] private Trajectory trajectory;
 
     [Header("Cooldown")]
     public UnityEvent<float> onCooldown;
+
     private float lastShootTime = -999f;
 
     void Start()
@@ -28,7 +26,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         onCooldown.Invoke((shootCooldown - Time.time + lastShootTime) / shootCooldown);
-        bool isPlayerMoving = playerController.IsMoving();
+        bool isPlayerMoving = player.GetIsMoving();
 
         if (!isPlayerMoving && Input.GetKeyDown(KeyCode.E))
         {
@@ -49,8 +47,8 @@ public class PlayerShoot : MonoBehaviour
             return;
         }
 
-        playerController.Shooting();
-        Vector2 spawnPosition = (Vector2)shootPoint.position + trajectory.shootDirection * trajectory.startOffset;
+        player.Shooting();
+        Vector2 spawnPosition = (Vector2)player.shootPoint.position + trajectory.shootDirection * trajectory.startOffset;
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
         Projectile projectileScript = projectile.GetComponent<Projectile>();

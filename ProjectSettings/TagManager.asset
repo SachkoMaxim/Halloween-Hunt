@@ -17,11 +17,11 @@ TagManager:
   - Projectile
   - 
   - 
-  - PlayerDetection
   - 
   - 
   - 
-  - 
+  - PlayerHitbox
+  - EnemyHitbox
   - 
   - 
   - 
