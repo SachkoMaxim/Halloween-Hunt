@@ -13,10 +13,14 @@ public class EnemyChase : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 currentDirection;
+    private EnemyAvoid avoid;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        avoid = GetComponent<EnemyAvoid>();
+
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void FixedUpdate()
@@ -24,10 +28,14 @@ public class EnemyChase : MonoBehaviour
         if (!canMove || detector.Target == null || !detector.TargetVisible)
         {
             rb.velocity = Vector2.zero;
+            currentDirection = Vector2.zero;
             return;
         }
 
-        currentDirection = (detector.Target.position - transform.position).normalized;
+        Vector2 directionToTarget = (detector.Target.position - transform.position).normalized;
+        Vector2 avoidanceForce = avoid.CalculateAvoidance(detector.Target);
+
+        currentDirection = (directionToTarget + avoidanceForce).normalized;
 
         rb.velocity = currentDirection * moveSpeed * Time.fixedDeltaTime;
     }
