@@ -16,6 +16,9 @@ public class AiDetector : MonoBehaviour
     [SerializeField] private Transform target = null;
     [field: SerializeField] public bool TargetVisible { get; private set; }
 
+    private Collider2D[] enemyColliders;
+    private Collider2D[] targetColliders;
+
     public Transform Target
     {
         get => target;
@@ -28,6 +31,7 @@ public class AiDetector : MonoBehaviour
 
     void Start()
     {
+        enemyColliders = GetComponents<Collider2D>();
         StartCoroutine(DetectionCoroutine());
     }
 
@@ -41,18 +45,61 @@ public class AiDetector : MonoBehaviour
 
     private bool CheckTargetVisible()
     {
-        var result = Physics2D.Raycast(
-            transform.position,
-            Target.position - transform.position,
-            viewRadius,
-            visibilityLayer
-        );
+        if (targetColliders == null || targetColliders.Length == 0)
+            return false;
 
-        if (result.collider != null)
+        foreach (var enemyCollider in enemyColliders)
         {
-            return (playerLayer & (1 << result.collider.gameObject.layer)) != 0;
+            Vector2[] enemyCheckPoints = GetColliderCheckPoints(enemyCollider);
+
+            foreach (var targetCollider in targetColliders)
+            {
+                Vector2[] targetCheckPoints = GetColliderCheckPoints(targetCollider);
+
+                foreach (var enemyPoint in enemyCheckPoints)
+                {
+                    foreach (var targetPoint in targetCheckPoints)
+                    {
+                        Vector2 direction = targetPoint - enemyPoint;
+                        float distance = direction.magnitude;
+
+                        if (distance > viewRadius)
+                            continue;
+
+                        var result = Physics2D.Raycast(
+                            enemyPoint,
+                            direction.normalized,
+                            distance,
+                            visibilityLayer
+                        );
+
+                        if (result.collider != null &&
+                            (playerLayer & (1 << result.collider.gameObject.layer)) != 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
         }
+
         return false;
+    }
+
+    private Vector2[] GetColliderCheckPoints(Collider2D collider)
+    {
+        Bounds bounds = collider.bounds;
+        Vector2 center = bounds.center;
+        Vector2 extents = bounds.extents;
+
+        return new Vector2[]
+        {
+            center,
+            new Vector2(center.x, center.y - extents.y),
+            new Vector2(center.x - extents.x, center.y),
+            new Vector2(center.x + extents.x, center.y),
+            new Vector2(center.x, center.y + extents.y)
+        };
     }
 
     private void DetectTarget()
@@ -74,16 +121,31 @@ public class AiDetector : MonoBehaviour
             Vector2.Distance(transform.position, Target.position) > viewRadius)
         {
             Target = null;
+            targetColliders = null;
         }
     }
 
     private void CheckInRange()
     {
-        Collider2D collision = Physics2D.OverlapCircle(transform.position, viewRadius, playerLayer);
-
-        if (collision != null)
+        foreach (var enemyCollider in enemyColliders)
         {
-            Target = collision.transform;
+            Vector2[] checkPoints = GetColliderCheckPoints(enemyCollider);
+
+            foreach (var checkPoint in checkPoints)
+            {
+                Collider2D collision = Physics2D.OverlapCircle(
+                    checkPoint,
+                    viewRadius,
+                    playerLayer
+                );
+
+                if (collision != null)
+                {
+                    Target = collision.transform;
+                    targetColliders = Target.GetComponents<Collider2D>();
+                    return;
+                }
+            }
         }
     }
 

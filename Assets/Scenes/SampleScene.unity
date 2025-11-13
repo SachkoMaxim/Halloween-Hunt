@@ -5384,7 +5384,7 @@ MonoBehaviour:
   detectionRadius: 0.4
   avoidanceForce: 1
   raycastCount: 9
-  exitStuckDistance: 0.3
+  exitStuckDistance: 0.5
 --- !u!1 &1602259311
 GameObject:
   m_ObjectHideFlags: 0
