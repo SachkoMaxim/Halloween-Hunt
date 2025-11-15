@@ -40,6 +40,12 @@ public class EnemyChase : MonoBehaviour
         rb.velocity = currentDirection * moveSpeed * Time.fixedDeltaTime;
     }
 
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+        if (!value) rb.velocity = Vector2.zero;
+    }
+
     public bool IsMoving()
     {
         return rb.velocity.sqrMagnitude > 0.01f;
