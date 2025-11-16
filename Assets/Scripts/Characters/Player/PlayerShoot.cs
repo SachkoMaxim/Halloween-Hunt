@@ -63,7 +63,8 @@ public class PlayerShoot : MonoBehaviour
                 trajectory.maxBulletDistance,
                 trajectory.wallLayer,
                 projectileDamage,
-                projectileSpeed
+                projectileSpeed,
+                0
             );
         }
 

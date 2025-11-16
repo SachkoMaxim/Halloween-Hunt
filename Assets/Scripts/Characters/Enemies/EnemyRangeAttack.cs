@@ -18,6 +18,7 @@ public class EnemyRangeAttack : MonoBehaviour
     [SerializeField] private float projectileSpeed = 0f;
     [SerializeField] private int projectileDamage = 0;
     [SerializeField] private float maxProjectileDistance = 0f;
+    [SerializeField] private int maxBounces = 0;
 
     [Header("References")]
     [SerializeField] private LayerMask playerLayer;
@@ -118,7 +119,8 @@ public class EnemyRangeAttack : MonoBehaviour
                 maxProjectileDistance,
                 wallLayer,
                 projectileDamage,
-                projectileSpeed
+                projectileSpeed,
+                maxBounces
             );
         }
     }

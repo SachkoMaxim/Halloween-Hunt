@@ -14,18 +14,28 @@ public class Projectile : MonoBehaviour
     private Vector2 startPosition;
     private Rigidbody2D rb;
 
+    private int bouncesRemaining = 0;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Initialize(Vector2 shootDirection, float maxDist, LayerMask walls, int damage, float speed)
+    public void Initialize(
+        Vector2 shootDirection,
+        float maxDist,
+        LayerMask walls,
+        int damage,
+        float speed,
+        int maxBounces
+    )
     {
         direction = shootDirection.normalized;
         maxDistance = maxDist;
         wallLayer = walls;
         projectileDamage = damage;
         projectileSpeed = speed;
+        bouncesRemaining = maxBounces;
         startPosition = transform.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -33,7 +43,7 @@ public class Projectile : MonoBehaviour
 
         if (rb != null)
         {
-            rb.velocity = direction * projectileSpeed;
+            rb.velocity = direction * projectileSpeed * Time.fixedDeltaTime;
         }
     }
 
@@ -53,11 +63,37 @@ public class Projectile : MonoBehaviour
         {
             destroyableObj.TakeDamage(projectileDamage);
             Destroy(gameObject);
+            return;
         }
 
         if (((1 << collision.gameObject.layer) & wallLayer) != 0)
         {
-            Destroy(gameObject);
+            if (bouncesRemaining > 0)
+            {
+                HandleBounce(collision);
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
+    }
+
+    private void HandleBounce(Collider2D collision)
+    {
+        bouncesRemaining--;
+
+        Vector2 contact = collision.ClosestPoint(transform.position);
+        Vector2 normal = (transform.position - (Vector3)contact).normalized;
+
+        direction = Vector2.Reflect(direction, normal).normalized;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        rb.velocity = direction * projectileSpeed * Time.fixedDeltaTime;
+
+        startPosition = transform.position;
     }
 }
