@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMeleeAttack : MonoBehaviour
 {
-    [Header("Attack Settings")]
+    [Header("Melee Attack Settings")]
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float attackRange = 0f;
     [SerializeField] private float attackCooldown = 0f;

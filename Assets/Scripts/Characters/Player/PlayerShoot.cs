@@ -6,8 +6,12 @@ using UnityEngine.Events;
 public class PlayerShoot : MonoBehaviour
 {
     [Header("Shooting Settings")]
-    [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float shootCooldown = 0f;
+
+    [Header("Projectile Settings")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private float projectileSpeed = 0f;
+    [SerializeField] private int projectileDamage = 0;
 
     [Header("References")]
     [SerializeField] private Player player;
@@ -54,7 +58,13 @@ public class PlayerShoot : MonoBehaviour
         Projectile projectileScript = projectile.GetComponent<Projectile>();
         if (projectileScript != null)
         {
-            projectileScript.Initialize(trajectory.shootDirection, trajectory.maxBulletDistance, trajectory.wallLayer);
+            projectileScript.Initialize(
+                trajectory.shootDirection,
+                trajectory.maxBulletDistance,
+                trajectory.wallLayer,
+                projectileDamage,
+                projectileSpeed
+            );
         }
 
         lastShootTime = Time.time;

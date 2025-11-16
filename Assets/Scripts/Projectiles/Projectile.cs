@@ -19,11 +19,13 @@ public class Projectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Initialize(Vector2 shootDirection, float maxDist, LayerMask walls)
+    public void Initialize(Vector2 shootDirection, float maxDist, LayerMask walls, int damage, float speed)
     {
         direction = shootDirection.normalized;
         maxDistance = maxDist;
         wallLayer = walls;
+        projectileDamage = damage;
+        projectileSpeed = speed;
         startPosition = transform.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
