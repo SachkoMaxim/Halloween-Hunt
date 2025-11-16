@@ -1515,6 +1515,7 @@ GameObject:
   - component: {fileID: 1142826806}
   - component: {fileID: 1142826805}
   - component: {fileID: 1142826804}
+  - component: {fileID: 1142826808}
   - component: {fileID: 1142826803}
   - component: {fileID: 1142826802}
   - component: {fileID: 1142826801}
@@ -1545,7 +1546,7 @@ MonoBehaviour:
   shotCooldown: 3.5
   shotPoint: {fileID: 793169857}
   stopDuration: 0.5
-  projectilePrefab: {fileID: 9092678157941521088, guid: e026e9f92b8d26d4da4b5809e0e72431, type: 3}
+  projectilePrefab: {fileID: 4363047707102020859, guid: 4dd0da60a2db5464abe7756ca560c7dd, type: 3}
   projectileSpeed: 250
   projectileDamage: 1
   maxProjectileDistance: 4
@@ -1606,7 +1607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 4.5
-  detectionCheckDelay: 0
+  detectionCheckDelay: 0.1
   playerLayer:
     serializedVersion: 2
     m_Bits: 32768
@@ -1757,6 +1758,19 @@ Transform:
   - {fileID: 793169857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1142826808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142826799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0a02de48cf6b744bd0b859d4f9ad6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
 --- !u!1 &1182648773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5983,6 +5997,7 @@ GameObject:
   - component: {fileID: 1390050136}
   - component: {fileID: 1390050135}
   - component: {fileID: 1390050134}
+  - component: {fileID: 1390050143}
   - component: {fileID: 1390050138}
   - component: {fileID: 1390050140}
   - component: {fileID: 1390050141}
@@ -6149,7 +6164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 4.5
-  detectionCheckDelay: 0
+  detectionCheckDelay: 0.1
   playerLayer:
     serializedVersion: 2
     m_Bits: 32768
@@ -6219,6 +6234,19 @@ MonoBehaviour:
     m_Bits: 256
   detector: {fileID: 1390050138}
   chase: {fileID: 1390050140}
+--- !u!114 &1390050143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390050133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0a02de48cf6b744bd0b859d4f9ad6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
 --- !u!1 &1511002126
 GameObject:
   m_ObjectHideFlags: 0

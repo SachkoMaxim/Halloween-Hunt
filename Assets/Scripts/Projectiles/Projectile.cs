@@ -96,4 +96,9 @@ public class Projectile : MonoBehaviour
 
         startPosition = transform.position;
     }
+
+    public int GetDamage()
+    {
+        return projectileDamage;
+    }
 }
