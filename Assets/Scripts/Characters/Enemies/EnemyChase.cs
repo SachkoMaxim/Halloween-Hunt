@@ -6,6 +6,7 @@ public class EnemyChase : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 0f;
+    [SerializeField] private float stopDistance = 0f;
     [SerializeField] private bool canMove = true;
 
     [Header("References")]
@@ -29,6 +30,13 @@ public class EnemyChase : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             currentDirection = Vector2.zero;
+            return;
+        }
+
+        float distance = Vector2.Distance(transform.position, detector.Target.position);
+        if (distance <= stopDistance)
+        {
+            rb.velocity = Vector2.zero;
             return;
         }
 

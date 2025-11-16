@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotDistance: 4
-  projectilesPerShot: 1
+  projectilesPerShot: 2
   spreadAngle: 0
   multiShotDelay: 0.2
   shotCooldown: 3.5
@@ -1592,6 +1592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  stopDistance: 1
   canMove: 1
   detector: {fileID: 1142826803}
 --- !u!114 &1142826803
@@ -6186,6 +6187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  stopDistance: 1
   canMove: 1
   detector: {fileID: 1390050138}
 --- !u!114 &1390050141
