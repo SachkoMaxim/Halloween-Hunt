@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void HandleCollision(Collider2D collision)
     {
         Destoryable destroyableObj = collision.GetComponent<Destoryable>();
         if (destroyableObj)
@@ -79,6 +79,17 @@ public class Projectile : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        HandleCollision(collision);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        HandleCollision(collision);
+    }
+
 
     private void HandleBounce(Collider2D collision)
     {

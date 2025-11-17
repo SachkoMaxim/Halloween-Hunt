@@ -347,8 +347,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1142826807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &523483476
-BoxCollider2D:
+--- !u!70 &523483476
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -380,18 +380,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.3}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.675, y: 0.2}
-  m_EdgeRadius: 0
+  m_Direction: 1
 --- !u!1 &584927377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,8 +1448,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1390050137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1037334021
-BoxCollider2D:
+--- !u!70 &1037334021
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1491,18 +1481,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.3}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.675, y: 0.2}
-  m_EdgeRadius: 0
+  m_Direction: 1
 --- !u!1 &1142826799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,11 +1554,12 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  raycastDistance: 1.2
-  detectionRadius: 0.4
+  raycastDistance: 1.5
+  detectionRadius: 0.45
   avoidanceForce: 1
   raycastCount: 15
-  exitStuckDistance: 0.3
+  exitStuckDistance: 0.4
+  collision: {fileID: 523483475}
 --- !u!114 &1142826802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1731,7 +1712,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6301887, g: 0.6301887, b: 0.6301887, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6205,11 +6186,12 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  raycastDistance: 1.2
-  detectionRadius: 0.4
+  raycastDistance: 1.5
+  detectionRadius: 0.45
   avoidanceForce: 1
   raycastCount: 15
-  exitStuckDistance: 0.3
+  exitStuckDistance: 0.4
+  collision: {fileID: 1037334020}
 --- !u!114 &1390050142
 MonoBehaviour:
   m_ObjectHideFlags: 0

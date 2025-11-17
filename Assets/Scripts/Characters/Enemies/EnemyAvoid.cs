@@ -14,6 +14,9 @@ public class EnemyAvoid : MonoBehaviour
     [SerializeField] private float raycastCount = 9;
     [SerializeField] private float exitStuckDistance = 0.3f;
 
+    [Header("Reference")]
+    [SerializeField] private Transform collision;
+
     private Rigidbody2D rb;
     private Vector2 lastSafeDirection = Vector2.right;
     private float stuckTimer = 0f;
@@ -58,9 +61,9 @@ public class EnemyAvoid : MonoBehaviour
             Vector2 rayDir = Quaternion.Euler(0, 0, angle) * direction;
 
             RaycastHit2D hit = Physics2D.Raycast(
-                transform.position,
+                collision.GetComponent<Collider2D>().bounds.center,
                 rayDir,
-                raycastDistance,
+                detectionRadius,
                 obstacleLayer
             );
 
@@ -166,6 +169,6 @@ public class EnemyAvoid : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Vector2 forward = transform.right;
-        Gizmos.DrawLine(transform.position, (Vector2)transform.position + forward * raycastDistance);
+        Gizmos.DrawLine(transform.position, (Vector2)transform.position + lastSafeDirection * raycastDistance);
     }
 }
