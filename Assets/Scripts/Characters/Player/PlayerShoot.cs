@@ -29,6 +29,8 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
+        if (InputBlocker.Blocked) return;
+
         onCooldown.Invoke((shootCooldown - Time.time + lastShootTime) / shootCooldown);
         bool isPlayerMoving = player.GetIsMoving();
 

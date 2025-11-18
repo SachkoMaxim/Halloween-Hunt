@@ -39,6 +39,8 @@ public class Trajectory : MonoBehaviour
 
     private void Update()
     {
+        if (InputBlocker.Blocked) return;
+
         bool isPlayerMoving = player.GetIsMoving();
 
         if (isPlayerMoving)
