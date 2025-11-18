@@ -59,9 +59,15 @@ TagManager:
   - name: Projectiles
     uniqueID: 343458839
     locked: 0
+  - name: Markers
+    uniqueID: 1223300185
+    locked: 0
   - name: Foreground
     uniqueID: 2529675581
     locked: 0
+  - name: 
+    uniqueID: 1067273571
+    locked: 0
   - name: UI
-    uniqueID: 1223300185
+    uniqueID: 1905995783
     locked: 0

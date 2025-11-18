@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     private Animator animator;
     private int currentHealth;
+
+    public static event Action OnPlayerDied;
 
     private static readonly int isMoving = Animator.StringToHash("isMoving");
     private static readonly int shoot = Animator.StringToHash("shoot");
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Player took damage");
+            OnPlayerDied.Invoke();
         }
     }
 
