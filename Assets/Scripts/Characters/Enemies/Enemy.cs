@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         {
             DisableEnemy();
             ShowDeadBody();
+            FindObjectOfType<GameController>().EnemyDied(this);
         }
         else
         {

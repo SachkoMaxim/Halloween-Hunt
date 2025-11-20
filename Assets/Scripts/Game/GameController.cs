@@ -7,6 +7,16 @@ public class GameController : MonoBehaviour
 {
     public GameObject gameOverScreen;
     public GameObject pauseScreen;
+    public GameObject winScreen;
+
+    private List<Enemy> enemies = new List<Enemy>();
+
+    void Awake()
+    {
+        Time.timeScale = 1;
+        InputBlocker.Blocked = false;
+        enemies.AddRange(FindObjectsOfType<Enemy>());
+    }
 
     void Start()
     {
@@ -27,7 +37,7 @@ public class GameController : MonoBehaviour
         Player.OnPlayerDied -= GameOverScreen;
     }
 
-    void GameOverScreen()
+    public void GameOverScreen()
     {
         gameOverScreen.SetActive(true);
         InputBlocker.Blocked = true;
@@ -57,8 +67,29 @@ public class GameController : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        InputBlocker.Blocked = false;
-        Time.timeScale = 1;
+        winScreen.SetActive(false);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void WinScreen()
+    {
+        winScreen.SetActive(true);
+        InputBlocker.Blocked = true;
+        Time.timeScale = 0;
+    }
+
+    public void EnemyDied(Enemy e)
+    {
+        enemies.Remove(e);
+
+        if (enemies.Count == 0)
+        {
+            WinScreen();
+        }
     }
 }
