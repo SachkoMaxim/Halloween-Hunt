@@ -41,14 +41,19 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void ContinueLevel()
+    public void BackHome()
+    {
+        SceneManager.LoadSceneAsync("Level Select");
+    }
+
+    public void Continue()
     {
         pauseScreen.SetActive(false);
         InputBlocker.Blocked = false;
         Time.timeScale = 1;
     }
 
-    public void ResetLevel()
+    public void Restart()
     {
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
