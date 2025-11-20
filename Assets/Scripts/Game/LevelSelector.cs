@@ -12,6 +12,7 @@ public class LevelSelector : MonoBehaviour
     public GameObject levelBar;
 
     private Image[] dots;
+    private Button[] levelButtons;
     private int currentPage = 0;
     private int totalPages = 0;
     private float targetValue = 0f;
@@ -22,6 +23,15 @@ public class LevelSelector : MonoBehaviour
     {
         totalPages = content.childCount;
         dots = levelBar.GetComponentsInChildren<Image>();
+        levelButtons = content.GetComponentsInChildren<Button>();
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if (i + 1 <= unlockedLevel)
+                levelButtons[i].interactable = true;
+            else
+                levelButtons[i].interactable = false;
+        }
     }
 
     void Start()

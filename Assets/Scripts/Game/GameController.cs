@@ -76,20 +76,31 @@ public class GameController : MonoBehaviour
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    private void WinScreen()
-    {
-        winScreen.SetActive(true);
-        InputBlocker.Blocked = true;
-        Time.timeScale = 0;
-    }
-
     public void EnemyDied(Enemy e)
     {
         enemies.Remove(e);
 
         if (enemies.Count == 0)
         {
+            UnlockNextLevel();
             WinScreen();
         }
+    }
+
+    private void UnlockNextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+        }
+    }
+
+    private void WinScreen()
+    {
+        winScreen.SetActive(true);
+        InputBlocker.Blocked = true;
+        Time.timeScale = 0;
     }
 }
