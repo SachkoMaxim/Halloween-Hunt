@@ -16,8 +16,12 @@ public class AiDetector : MonoBehaviour
     [SerializeField] private Transform target = null;
     [field: SerializeField] public bool TargetVisible { get; private set; }
 
+    [Header("References")]
+    [SerializeField] public GameObject exclamationMark;
+
     private Collider2D[] enemyColliders;
     private Collider2D[] targetColliders;
+    private bool isPlayerInRange = false;
 
     public Transform Target
     {
@@ -40,6 +44,11 @@ public class AiDetector : MonoBehaviour
         if (Target != null)
         {
             TargetVisible = CheckTargetVisible();
+
+            if (TargetVisible && isPlayerInRange)
+            {
+                StartCoroutine(Alert());
+            }
         }
     }
 
@@ -122,6 +131,7 @@ public class AiDetector : MonoBehaviour
         {
             Target = null;
             targetColliders = null;
+            isPlayerInRange = false;
         }
     }
 
@@ -143,6 +153,7 @@ public class AiDetector : MonoBehaviour
                 {
                     Target = collision.transform;
                     targetColliders = Target.GetComponents<Collider2D>();
+                    isPlayerInRange = true;
                     return;
                 }
             }
@@ -154,6 +165,16 @@ public class AiDetector : MonoBehaviour
         yield return new WaitForSeconds(detectionCheckDelay);
         DetectTarget();
         StartCoroutine(DetectionCoroutine());
+    }
+
+    IEnumerator Alert()
+    {
+        exclamationMark.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f);
+
+        exclamationMark.SetActive(false);
+        isPlayerInRange = false;
     }
 
     private void OnDrawGizmos()

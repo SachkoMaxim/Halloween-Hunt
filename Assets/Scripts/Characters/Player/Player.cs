@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
 
     [Header("References")]
     [SerializeField] public Transform shootPoint;
+    [SerializeField] public GameObject playerMarker;
 
     [HideInInspector] public Rigidbody2D rb;
     private Animator animator;
@@ -22,6 +24,11 @@ public class Player : MonoBehaviour
     private static readonly int shoot = Animator.StringToHash("shoot");
     private static readonly int moveX = Animator.StringToHash("moveX");
     private static readonly int moveY = Animator.StringToHash("moveY");
+
+    void Awake()
+    {
+        StartCoroutine(ShowPlayerMarker());
+    }
 
     void Start()
     {
@@ -60,5 +67,26 @@ public class Player : MonoBehaviour
     public bool GetIsMoving()
     {
         return animator.GetBool(isMoving);
+    }
+
+    public IEnumerator ShowPlayerMarker()
+    {
+        playerMarker.SetActive(true);
+        Image img = playerMarker.GetComponent<Image>();
+
+        float duration = 3f;
+        float endTime = Time.time + duration;
+
+        while (Time.time < endTime)
+        {
+            float t = Mathf.PingPong(Time.time * 2f, 1f);
+            Color c = img.color;
+            c.a = Mathf.Lerp(0.4f, 1f, t);
+            img.color = c;
+
+            yield return null;
+        }
+
+        playerMarker.SetActive(false);
     }
 }

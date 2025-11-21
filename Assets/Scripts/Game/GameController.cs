@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject levelIntro;
     public GameObject gameOverScreen;
     public GameObject pauseScreen;
     public GameObject winScreen;
 
     private List<Enemy> enemies = new List<Enemy>();
+    private static bool levelIntroShown = false;
 
     void Awake()
     {
@@ -22,6 +24,12 @@ public class GameController : MonoBehaviour
     {
         Player.OnPlayerDied += GameOverScreen;
         gameOverScreen.SetActive(false);
+
+        if (!levelIntroShown)
+        {
+            StartCoroutine(ShowLevelIntro());
+            levelIntroShown = true;
+        }
     }
 
     void Update()
@@ -53,6 +61,7 @@ public class GameController : MonoBehaviour
 
     public void BackHome()
     {
+        levelIntroShown = false;
         SceneManager.LoadSceneAsync("Level Select");
     }
 
@@ -73,6 +82,7 @@ public class GameController : MonoBehaviour
 
     public void Next()
     {
+        levelIntroShown = false;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -102,5 +112,14 @@ public class GameController : MonoBehaviour
         winScreen.SetActive(true);
         InputBlocker.Blocked = true;
         Time.timeScale = 0;
+    }
+
+    private IEnumerator ShowLevelIntro()
+    {
+        levelIntro.SetActive(true);
+
+        yield return new WaitForSeconds(2.5f);
+
+        levelIntro.SetActive(false);
     }
 }
