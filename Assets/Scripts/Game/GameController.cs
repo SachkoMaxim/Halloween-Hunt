@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject pauseScreen;
     public GameObject winScreen;
+    public Animator transitionAnim;
 
     private List<Enemy> enemies = new List<Enemy>();
     private static bool levelIntroShown = false;
@@ -16,8 +17,10 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         Time.timeScale = 1;
-        InputBlocker.Blocked = false;
         enemies.AddRange(FindObjectsOfType<Enemy>());
+        transitionAnim.gameObject.SetActive(true);
+        transitionAnim.speed = 1f;
+        StartCoroutine(BeginningTransition());
     }
 
     void Start()
@@ -62,7 +65,7 @@ public class GameController : MonoBehaviour
     public void BackHome()
     {
         levelIntroShown = false;
-        SceneManager.LoadSceneAsync("Level Select");
+        StartCoroutine(SceneTransition("Level Select"));
     }
 
     public void Continue()
@@ -77,13 +80,13 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
         winScreen.SetActive(false);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(SceneTransition(SceneManager.GetActiveScene().name));
     }
 
     public void Next()
     {
         levelIntroShown = false;
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(SceneTransition(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void EnemyDied(Enemy e)
@@ -121,5 +124,30 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
 
         levelIntro.SetActive(false);
+    }
+
+    private IEnumerator BeginningTransition()
+    {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(1f);
+
+        InputBlocker.Blocked = false;
+        Time.timeScale = 1;
+    }
+
+    private IEnumerator SceneTransition(string sceneName)
+    {
+        transitionAnim.SetTrigger("end");
+        yield return new WaitForSecondsRealtime(1f);
+
+        yield return SceneManager.LoadSceneAsync(sceneName);
+    }
+
+    private IEnumerator SceneTransition(int sceneIndex)
+    {
+        transitionAnim.SetTrigger("end");
+        yield return new WaitForSecondsRealtime(1f);
+
+        yield return SceneManager.LoadSceneAsync(sceneIndex);
     }
 }
