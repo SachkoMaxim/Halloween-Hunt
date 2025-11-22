@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -12,19 +13,19 @@ public class GameController : MonoBehaviour
     public Animator transitionAnim;
 
     private List<Enemy> enemies = new List<Enemy>();
+    private bool canOpen = true;
     private static bool levelIntroShown = false;
 
     void Awake()
     {
-        Time.timeScale = 1;
         enemies.AddRange(FindObjectsOfType<Enemy>());
         transitionAnim.gameObject.SetActive(true);
         transitionAnim.speed = 1f;
-        StartCoroutine(BeginningTransition());
     }
 
     void Start()
     {
+        StartCoroutine(BeginningTransition());
         Player.OnPlayerDied += GameOverScreen;
         gameOverScreen.SetActive(false);
 
@@ -39,7 +40,7 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
         {
-            PauseScreen();
+            PauseScreen(canOpen);
         }
     }
 
@@ -55,11 +56,13 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void PauseScreen()
+    public void PauseScreen(bool isActive)
     {
-        pauseScreen.SetActive(true);
-        InputBlocker.Blocked = true;
-        Time.timeScale = 0;
+        pauseScreen.SetActive(isActive);
+        EventSystem.current.SetSelectedGameObject(null);
+        InputBlocker.Blocked = isActive;
+        Time.timeScale = isActive ? 0 : 1;
+        canOpen = !canOpen;
     }
 
     public void BackHome()
@@ -70,9 +73,7 @@ public class GameController : MonoBehaviour
 
     public void Continue()
     {
-        pauseScreen.SetActive(false);
-        InputBlocker.Blocked = false;
-        Time.timeScale = 1;
+        PauseScreen(false);
     }
 
     public void Restart()
