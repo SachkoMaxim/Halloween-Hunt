@@ -55,6 +55,12 @@ public class Trajectory : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        endMarker.gameObject.SetActive(false);
+        lineRenderer.enabled = false;
+    }
+
     private void CalculateTrajectory()
     {
         Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);

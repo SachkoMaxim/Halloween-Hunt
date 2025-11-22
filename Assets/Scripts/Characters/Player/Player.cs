@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private static readonly int shoot = Animator.StringToHash("shoot");
     private static readonly int moveX = Animator.StringToHash("moveX");
     private static readonly int moveY = Animator.StringToHash("moveY");
+    private static readonly int dead = Animator.StringToHash("dead");
 
     void Awake()
     {
@@ -59,14 +60,25 @@ public class Player : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Player took damage");
-            OnPlayerDied.Invoke();
+            StartCoroutine(Die());
         }
     }
 
     public bool GetIsMoving()
     {
         return animator.GetBool(isMoving);
+    }
+
+    private void DisablePlayer()
+    {
+        foreach (var comp in GetComponentsInChildren<MonoBehaviour>())
+            comp.enabled = false;
+
+        foreach (var rb in GetComponentsInChildren<Rigidbody2D>())
+            rb.Sleep();
+
+        foreach (var col in GetComponentsInChildren<Collider2D>())
+            col.enabled = false;
     }
 
     public IEnumerator ShowPlayerMarker()
@@ -88,5 +100,15 @@ public class Player : MonoBehaviour
         }
 
         playerMarker.SetActive(false);
+    }
+
+    private IEnumerator Die()
+    {
+        DisablePlayer();
+        animator.SetTrigger(dead);
+
+        yield return new WaitForSeconds(1.05f);
+
+        OnPlayerDied.Invoke();
     }
 }
