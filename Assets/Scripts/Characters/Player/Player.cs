@@ -4,81 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : Character
 {
-    [Header("Player Settings")]
-    [SerializeField] private int maxHealth = 1;
-    [SerializeField] public float moveSpeed = 0f;
-
     [Header("References")]
     [SerializeField] public Transform shootPoint;
     [SerializeField] public GameObject playerMarker;
 
-    [HideInInspector] public Rigidbody2D rb;
-    private Animator animator;
-    private int currentHealth;
-
+    [HideInInspector] public Vector2 attackDirection;
     public static event Action OnPlayerDied;
 
-    private static readonly int isMoving = Animator.StringToHash("isMoving");
-    private static readonly int shoot = Animator.StringToHash("shoot");
-    private static readonly int moveX = Animator.StringToHash("moveX");
-    private static readonly int moveY = Animator.StringToHash("moveY");
-    private static readonly int dead = Animator.StringToHash("dead");
-
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         StartCoroutine(ShowPlayerMarker());
-    }
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
-    }
-
-    public void UpdateMovement(float inputX, float inputY)
-    {
-        animator.SetFloat(moveX, inputX);
-        animator.SetFloat(moveY, inputY);
-    }
-
-    public void IsMoving(bool meaning)
-    {
-        animator.SetBool(isMoving, meaning);
-    }
-
-    public void Shooting()
-    {
-        animator.SetTrigger(shoot);
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
-        {
-            StartCoroutine(Die());
-        }
-    }
-
-    public bool GetIsMoving()
-    {
-        return animator.GetBool(isMoving);
-    }
-
-    private void DisablePlayer()
-    {
-        foreach (var comp in GetComponentsInChildren<MonoBehaviour>())
-            comp.enabled = false;
-
-        foreach (var rb in GetComponentsInChildren<Rigidbody2D>())
-            rb.Sleep();
-
-        foreach (var col in GetComponentsInChildren<Collider2D>())
-            col.enabled = false;
     }
 
     public IEnumerator ShowPlayerMarker()
@@ -102,13 +40,9 @@ public class Player : MonoBehaviour
         playerMarker.SetActive(false);
     }
 
-    private IEnumerator Die()
+    protected override IEnumerator Die(float time)
     {
-        DisablePlayer();
-        animator.SetTrigger(dead);
-
-        yield return new WaitForSeconds(1.05f);
-
+        yield return StartCoroutine(base.Die(time));
         OnPlayerDied.Invoke();
     }
 }

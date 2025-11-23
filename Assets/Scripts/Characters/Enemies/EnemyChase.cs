@@ -7,36 +7,39 @@ public class EnemyChase : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 0f;
     [SerializeField] private float stopDistance = 0f;
-    [SerializeField] private bool canMove = true;
 
     [Header("References")]
     [SerializeField] private AiDetector detector;
+    [SerializeField] private Enemy enemy;
 
-    private Rigidbody2D rb;
     private Vector2 currentDirection;
     private EnemyAvoid avoid;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         avoid = GetComponent<EnemyAvoid>();
 
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        if (enemy.GetRigidbody() != null)
+        {
+            enemy.GetRigidbody().constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 
     void FixedUpdate()
     {
-        if (!canMove || detector.Target == null || !detector.TargetVisible)
+        if (!enemy.GetCanMove() || detector.Target == null || !detector.TargetVisible)
         {
-            rb.velocity = Vector2.zero;
+            enemy.GetRigidbody().velocity = Vector2.zero;
             currentDirection = Vector2.zero;
+            enemy.IsMoving(false);
             return;
         }
 
         float distance = Vector2.Distance(transform.position, detector.Target.position);
         if (distance <= stopDistance)
         {
-            rb.velocity = Vector2.zero;
+            enemy.GetRigidbody().velocity = Vector2.zero;
+            enemy.IsMoving(false);
             return;
         }
 
@@ -45,18 +48,37 @@ public class EnemyChase : MonoBehaviour
 
         currentDirection = (directionToTarget + avoidanceForce).normalized;
 
-        rb.velocity = currentDirection * moveSpeed * Time.fixedDeltaTime;
+        enemy.GetRigidbody().velocity = currentDirection * moveSpeed * Time.fixedDeltaTime;
+
+        UpdateAnimation();
+    }
+
+    private void UpdateAnimation()
+    {
+        if (currentDirection != Vector2.zero)
+        {
+            enemy.UpdateMovement(currentDirection.x, currentDirection.y);
+            enemy.IsMoving(true);
+        }
+        else
+        {
+            enemy.IsMoving(false);
+        }
     }
 
     public void SetCanMove(bool value)
     {
-        canMove = value;
-        if (!value) rb.velocity = Vector2.zero;
+        enemy.CanMove(value);
+        if (!value)
+        {
+            enemy.GetRigidbody().velocity = Vector2.zero;
+            enemy.IsMoving(false);
+        }
     }
 
     public bool IsMoving()
     {
-        return rb.velocity.sqrMagnitude > 0.01f;
+        return enemy.GetRigidbody().velocity.sqrMagnitude > 0.01f;
     }
 
     public Vector2 GetCurrentDirection()

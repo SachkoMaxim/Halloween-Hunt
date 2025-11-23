@@ -2,81 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRangeAttack : MonoBehaviour
+public class EnemyProjectileAttack : EnemyAttack
 {
-    [Header("Range Attack Settings")]
-    [SerializeField] private float shotDistance = 0f;
+    [Header("Projectile Attack Settings")]
     [SerializeField] private int projectilesPerShot = 1;
     [SerializeField] private float spreadAngle = 0f;
     [SerializeField] private float multiShotDelay = 0.1f;
-    [SerializeField] private float shotCooldown = 0f;
-    [SerializeField] private Transform shotPoint;
-    [SerializeField] private float stopDuration = 0f;
 
     [Header("Projectile Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed = 0f;
-    [SerializeField] private int projectileDamage = 0;
     [SerializeField] private float maxProjectileDistance = 0f;
     [SerializeField] private int maxBounces = 0;
 
-    [Header("References")]
-    [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private LayerMask wallLayer;
-    [SerializeField] private AiDetector detector;
-    [SerializeField] private EnemyChase chase;
+    private Vector2 currentShotDirection;
 
-    private float lastShotTime = -999f;
-    private bool isPreparingAttack = false;
-
-    void FixedUpdate()
+    protected override IEnumerator PrepareAndAttack()
     {
-        if (isPreparingAttack || detector.Target == null || !detector.TargetVisible)
-        {
-            return;
-        }
+        currentShotDirection = (detector.Target.position - attackPoint.position).normalized;
+        enemy.UpdateMovement(currentShotDirection.x, currentShotDirection.y);
 
-        if (CanAttack())
-        {
-            StartCoroutine(PrepareAndAttack());
-        }
+        yield return StartCoroutine(base.PrepareAndAttack());
     }
 
-    private bool CanAttack()
+    protected override void PerformAttack()
     {
-        float distance = Vector2.Distance(transform.position, detector.Target.position);
-        if (Time.time - lastShotTime < shotCooldown || distance > shotDistance)
-        {
-            return false;
-        }
-
-        RaycastHit2D wallCheck = Physics2D.Raycast(
-            transform.position,
-            (detector.Target.position - transform.position).normalized,
-            distance,
-            wallLayer
-        );
-
-        return wallCheck.collider == null;
-    }
-
-    private IEnumerator PrepareAndAttack()
-    {
-        isPreparingAttack = true;
-        chase.SetCanMove(false);
-
-        yield return new WaitForSeconds(stopDuration);
-
-        PerformAttack();
-
-        lastShotTime = Time.time;
-        isPreparingAttack = false;
-        chase.SetCanMove(true);
-    }
-
-    private void PerformAttack()
-    {
-        Vector2 shotDirection = (detector.Target.position - shotPoint.position).normalized;
+        Vector2 shotDirection = currentShotDirection;
 
         if (projectilesPerShot == 1)
         {
@@ -108,7 +59,7 @@ public class EnemyRangeAttack : MonoBehaviour
             return;
         }
 
-        Vector2 spawnPosition = (Vector2)shotPoint.position;
+        Vector2 spawnPosition = (Vector2)attackPoint.position;
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
         Projectile projectileScript = projectile.GetComponent<Projectile>();
@@ -118,7 +69,7 @@ public class EnemyRangeAttack : MonoBehaviour
                 direction,
                 maxProjectileDistance,
                 wallLayer,
-                projectileDamage,
+                attackDamage,
                 projectileSpeed,
                 maxBounces
             );
@@ -137,6 +88,6 @@ public class EnemyRangeAttack : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, shotDistance);
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
     }
 }

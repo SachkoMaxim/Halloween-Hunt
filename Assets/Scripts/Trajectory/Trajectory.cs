@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class Trajectory : MonoBehaviour
 {
-    [Header("Bullet Settings")]
-    [SerializeField] public float maxBulletDistance = 0f;
-    [SerializeField] public float startOffset = 0f;
-    [SerializeField] public LayerMask wallLayer;
-
     [Header("Line Visualization")]
     [SerializeField] private Color lineColor = new Color(1f, 0f, 0f, 0.7f);
     [SerializeField] private float lineWidth = 0.05f;
+    [SerializeField] public float startOffset = 0f;
 
     [Header("End Marker")]
     [SerializeField] private GameObject endMarker;
+    [SerializeField] public float maxDistance = 0f;
     [SerializeField] private float markerSize = 1.0f;
 
     [Header("References")]
     [SerializeField] private Player player;
+    [SerializeField] public LayerMask wallLayer;
 
     private Camera mainCamera;
-    [HideInInspector] public Vector2 shootDirection;
     private Vector2 trajectoryEndPoint;
     private LineRenderer lineRenderer;
 
@@ -67,14 +64,14 @@ public class Trajectory : MonoBehaviour
         mouseWorldPos.z = 0f;
 
         Vector2 startPoint = player.shootPoint.position;
-        shootDirection = ((Vector2)mouseWorldPos - startPoint).normalized;
+        player.attackDirection = ((Vector2)mouseWorldPos - startPoint).normalized;
 
-        Vector2 raycastStart = startPoint + shootDirection * startOffset;
+        Vector2 raycastStart = startPoint + player.attackDirection * startOffset;
 
         RaycastHit2D hit = Physics2D.Raycast(
             raycastStart,
-            shootDirection,
-            maxBulletDistance - startOffset,
+            player.attackDirection,
+            maxDistance - startOffset,
             wallLayer
         );
 
@@ -84,13 +81,13 @@ public class Trajectory : MonoBehaviour
         }
         else
         {
-            trajectoryEndPoint = raycastStart + shootDirection * (maxBulletDistance - startOffset);
+            trajectoryEndPoint = raycastStart + player.attackDirection * (maxDistance - startOffset);
         }
     }
 
     private void UpdateLineVisualization()
     {
-        Vector2 startPoint = (Vector2)player.shootPoint.position + shootDirection * startOffset;
+        Vector2 startPoint = (Vector2)player.shootPoint.position + player.attackDirection * startOffset;
 
         lineRenderer.SetPosition(0, startPoint);
         lineRenderer.SetPosition(1, trajectoryEndPoint);
@@ -163,11 +160,6 @@ public class Trajectory : MonoBehaviour
         texture.filterMode = FilterMode.Point;
 
         return Sprite.Create(texture, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f));
-    }
-
-    public Vector2 GetShootDirection()
-    {
-        return shootDirection;
     }
 
     public Vector2 GetTrajectoryEndPoint()

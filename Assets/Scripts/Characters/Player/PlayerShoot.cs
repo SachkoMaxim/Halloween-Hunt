@@ -7,15 +7,17 @@ public class PlayerShoot : MonoBehaviour
 {
     [Header("Shooting Settings")]
     [SerializeField] private float shootCooldown = 0f;
+    [SerializeField] private float startOffset = 0f;
 
     [Header("Projectile Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed = 0f;
+    [SerializeField] private float maxProjectileDistance = 0f;
     [SerializeField] private int projectileDamage = 0;
 
     [Header("References")]
+    [SerializeField] protected LayerMask wallLayer;
     [SerializeField] private Player player;
-    [SerializeField] private Trajectory trajectory;
 
     [Header("Cooldown")]
     public UnityEvent<float> onCooldown;
@@ -53,17 +55,17 @@ public class PlayerShoot : MonoBehaviour
             return;
         }
 
-        player.Shooting();
-        Vector2 spawnPosition = (Vector2)player.shootPoint.position + trajectory.shootDirection * trajectory.startOffset;
+        player.Attacking();
+        Vector2 spawnPosition = (Vector2)player.shootPoint.position + player.attackDirection * startOffset;
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
         Projectile projectileScript = projectile.GetComponent<Projectile>();
         if (projectileScript != null)
         {
             projectileScript.Initialize(
-                trajectory.shootDirection,
-                trajectory.maxBulletDistance,
-                trajectory.wallLayer,
+                player.attackDirection,
+                maxProjectileDistance,
+                wallLayer,
                 projectileDamage,
                 projectileSpeed,
                 0

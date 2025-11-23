@@ -19,8 +19,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (input.x != 0) input.y = 0;
 
-        Vector2 movement = input * player.moveSpeed * Time.fixedDeltaTime;
-        player.rb.velocity = movement;
+        Vector2 movement = input * player.GetMoveSpeed() * Time.fixedDeltaTime;
+        player.GetRigidbody().velocity = movement;
         UpdateAnimation();
     }
 

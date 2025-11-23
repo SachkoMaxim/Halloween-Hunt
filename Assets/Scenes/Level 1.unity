@@ -2141,17 +2141,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec177c1afc1c9034490ad8041876e0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBulletDistance: 4
+  lineColor: {r: 1, g: 0, b: 0, a: 0.69803923}
+  lineWidth: 0.1
   startOffset: 0.4
+  endMarker: {fileID: 0}
+  maxDistance: 4
+  markerSize: 1
+  player: {fileID: 702591080}
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
-  lineColor: {r: 1, g: 0, b: 0, a: 0.69803923}
-  lineWidth: 0.1
-  endMarker: {fileID: 0}
-  markerSize: 1
-  player: {fileID: 702591080}
-  shootDirection: {x: 0, y: 0}
 --- !u!114 &702591079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2165,11 +2164,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootCooldown: 4
+  startOffset: 0.4
   projectilePrefab: {fileID: 9092678157941521088, guid: e026e9f92b8d26d4da4b5809e0e72431, type: 3}
   projectileSpeed: 400
+  maxProjectileDistance: 4
   projectileDamage: 1
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 256
   player: {fileID: 702591080}
-  trajectory: {fileID: 702591077}
   onCooldown:
     m_PersistentCalls:
       m_Calls:
@@ -2197,11 +2200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc020432f15b204a9282c19fb7a5823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
   moveSpeed: 30
+  deathTime: 1.05
   shootPoint: {fileID: 700554561}
   playerMarker: {fileID: 2140914202}
-  rb: {fileID: 702591071}
+  attackDirection: {x: 0, y: 0}
 --- !u!1 &716475972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,6 +3532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142826807}
   - component: {fileID: 1142826806}
+  - component: {fileID: 1142826809}
   - component: {fileID: 1142826805}
   - component: {fileID: 1142826804}
   - component: {fileID: 1142826808}
@@ -3554,18 +3559,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe8d9be0b30227438eb104f93080f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDistance: 4
-  projectilesPerShot: 2
-  spreadAngle: 0
-  multiShotDelay: 0.2
-  shotCooldown: 3.5
-  shotPoint: {fileID: 793169857}
+  attackDistance: 4
+  attackCooldown: 3
+  attackPoint: {fileID: 793169857}
   stopDuration: 0.5
-  projectilePrefab: {fileID: 4363047707102020859, guid: 4dd0da60a2db5464abe7756ca560c7dd, type: 3}
-  projectileSpeed: 250
-  projectileDamage: 1
-  maxProjectileDistance: 4
-  maxBounces: 3
+  attackDamage: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 32768
@@ -3573,7 +3571,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   detector: {fileID: 1142826803}
-  chase: {fileID: 1142826802}
+  enemy: {fileID: 1142826808}
+  projectilesPerShot: 2
+  spreadAngle: 0
+  multiShotDelay: 0.2
+  projectilePrefab: {fileID: 4363047707102020859, guid: 4dd0da60a2db5464abe7756ca560c7dd, type: 3}
+  projectileSpeed: 200
+  maxProjectileDistance: 4
+  maxBounces: 3
 --- !u!114 &1142826801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3595,6 +3600,7 @@ MonoBehaviour:
   raycastCount: 15
   exitStuckDistance: 0.4
   collision: {fileID: 523483475}
+  enemy: {fileID: 1142826808}
 --- !u!114 &1142826802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3609,8 +3615,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   stopDistance: 1
-  canMove: 1
   detector: {fileID: 1142826803}
+  enemy: {fileID: 1142826808}
 --- !u!114 &1142826803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3790,6 +3796,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  moveSpeed: 20
+  deathTime: 0.55
+--- !u!95 &1142826809
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142826799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aeffb40af03a9684aba0d94b10631205, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1155550495
 GameObject:
   m_ObjectHideFlags: 0
@@ -8685,6 +8714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390050137}
   - component: {fileID: 1390050136}
+  - component: {fileID: 1390050144}
   - component: {fileID: 1390050135}
   - component: {fileID: 1390050134}
   - component: {fileID: 1390050143}
@@ -8879,8 +8909,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   stopDistance: 1
-  canMove: 1
   detector: {fileID: 1390050138}
+  enemy: {fileID: 1390050143}
 --- !u!114 &1390050141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8902,6 +8932,7 @@ MonoBehaviour:
   raycastCount: 15
   exitStuckDistance: 0.4
   collision: {fileID: 1037334020}
+  enemy: {fileID: 1390050143}
 --- !u!114 &1390050142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8915,11 +8946,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 1
-  attackRange: 0.5
   attackCooldown: 2
-  attackDamage: 1
   attackPoint: {fileID: 178361406}
   stopDuration: 1
+  attackDamage: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 32768
@@ -8927,7 +8957,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   detector: {fileID: 1390050138}
-  chase: {fileID: 1390050140}
+  enemy: {fileID: 1390050143}
+  meleeRange: 0.5
 --- !u!114 &1390050143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8941,6 +8972,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  moveSpeed: 20
+  deathTime: 0.55
+--- !u!95 &1390050144
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390050133}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aeffb40af03a9684aba0d94b10631205, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1457711672
 GameObject:
   m_ObjectHideFlags: 0

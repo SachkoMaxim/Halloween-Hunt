@@ -16,16 +16,11 @@ public class EnemyAvoid : MonoBehaviour
 
     [Header("Reference")]
     [SerializeField] private Transform collision;
+    [SerializeField] private Enemy enemy;
 
-    private Rigidbody2D rb;
     private Vector2 lastSafeDirection = Vector2.right;
     private float stuckTimer = 0f;
     private const float stuckThreshold = 0.3f;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     public Vector2 CalculateAvoidance(Transform targetTransform)
     {
@@ -120,7 +115,7 @@ public class EnemyAvoid : MonoBehaviour
 
     private bool IsStuck()
     {
-        return rb.velocity.sqrMagnitude < 0.01f && stuckTimer > stuckThreshold;
+        return enemy.GetRigidbody().velocity.sqrMagnitude < 0.01f && stuckTimer > stuckThreshold;
     }
 
     private Vector2 GetEmergencyEscapeDirection()
