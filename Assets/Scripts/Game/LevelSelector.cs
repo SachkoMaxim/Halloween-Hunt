@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,9 +30,15 @@ public class LevelSelector : MonoBehaviour
         for (int i = 0; i < levelButtons.Length; i++)
         {
             if (i + 1 <= unlockedLevel)
+            {
                 levelButtons[i].interactable = true;
+                levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().GameObject().SetActive(true);
+            }
             else
+            {
                 levelButtons[i].interactable = false;
+                levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().GameObject().SetActive(false);
+            }
         }
     }
 
