@@ -19,7 +19,7 @@ public class EnemyProjectileAttack : EnemyAttack
 
     protected override IEnumerator PrepareAndAttack()
     {
-        currentShotDirection = (detector.Target.position - attackPoint.position).normalized;
+        currentShotDirection = (enemyAI.currentTarget.position - attackPoint.position).normalized;
         enemy.UpdateMovement(currentShotDirection.x, currentShotDirection.y);
 
         yield return StartCoroutine(base.PrepareAndAttack());

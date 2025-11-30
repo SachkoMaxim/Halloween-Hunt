@@ -21,7 +21,7 @@ public class EnemyMeleeAttack : EnemyAttack
 
     protected override IEnumerator PrepareAndAttack()
     {
-        Vector2 directionToTarget = (detector.Target.position - transform.position).normalized;
+        Vector2 directionToTarget = (enemyAI.currentTarget.position - transform.position).normalized;
         Vector2 attackDirection = GetBestAttackDirection(directionToTarget);
         attackPoint.localPosition = attackDirection;
 

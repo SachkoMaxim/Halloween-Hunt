@@ -16,7 +16,7 @@ public abstract class EnemyAttack : MonoBehaviour
     [Header("References")]
     [SerializeField] protected LayerMask playerLayer;
     [SerializeField] protected LayerMask wallLayer;
-    [SerializeField] protected AiDetector detector;
+    [SerializeField] protected EnemyAI enemyAI;
     [SerializeField] protected Enemy enemy;
 
     protected float lastAttackTime = -999f;
@@ -24,7 +24,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        if (isPreparingAttack || detector.Target == null || !detector.TargetVisible)
+        if (isPreparingAttack || enemyAI.currentTarget == null || !enemyAI.targetVisible)
         {
             return;
         }
@@ -42,7 +42,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
     private bool CanAttack()
     {
-        float distance = Vector2.Distance(transform.position, detector.Target.position);
+        float distance = Vector2.Distance(transform.position, enemyAI.currentTarget.position);
         if (Time.time - lastAttackTime < attackCooldown || distance > attackDistance)
         {
             return false;
@@ -50,7 +50,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
         RaycastHit2D wallCheck = Physics2D.Raycast(
             transform.position,
-            (detector.Target.position - transform.position).normalized,
+            (enemyAI.currentTarget.position - transform.position).normalized,
             distance,
             wallLayer
         );
