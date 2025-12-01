@@ -12,7 +12,8 @@ public class Enemy : Character
 
     [Header("References")]
     [SerializeField] private EnemyAI enemyAI;
-    [SerializeField] private List<SteeringBehavior> steeringBehaviors;
+    [SerializeField] private List<SteeringBehavior> chaseSteeringBehaviors;
+    [SerializeField] private List<SteeringBehavior> patrolSteeringBehaviors;
     [SerializeField] private List<Detector> detectors;
 
     private SteeringController moveController;
@@ -47,6 +48,10 @@ public class Enemy : Character
         else if (enemyAI.GetTargetsCount() > 0)
         {
             enemyAI.currentTarget = enemyAI.targets[0];
+        }
+        else
+        {
+            StartCoroutine(Patrol());
         }
     }
 
@@ -88,7 +93,7 @@ public class Enemy : Character
             {
                 if (moveController != null)
                 {
-                    movementInput = moveController.GetDirectionToMove(steeringBehaviors, enemyAI);
+                    movementInput = moveController.GetDirectionToMove(chaseSteeringBehaviors, enemyAI);
                 }
                 yield return new WaitForSeconds(aiUpdateDelay);
             }
@@ -96,6 +101,16 @@ public class Enemy : Character
 
         movementInput = Vector2.zero;
         following = false;
+    }
+
+    private IEnumerator Patrol()
+    {
+        if (moveController != null)
+        {
+            movementInput = moveController.GetDirectionToMove(patrolSteeringBehaviors, enemyAI);
+        }
+
+        yield return new WaitForSeconds(aiUpdateDelay);
     }
 
     protected override IEnumerator Die(float time)
