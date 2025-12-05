@@ -7,6 +7,7 @@ public class GameSettings : MonoBehaviour
 {
     [Header("Menu Settings")]
     [SerializeField] public Slider musicSlider;
+    [SerializeField] public Slider SFXSlider;
 
     private AudioManager gameAudioManager;
 
@@ -18,6 +19,7 @@ public class GameSettings : MonoBehaviour
     void Start()
     {
         musicSlider.value = gameAudioManager.GetMusicVolume();
+        SFXSlider.value = gameAudioManager.GetSFXVolume();
     }
 
     void OnDestroy()
@@ -28,6 +30,11 @@ public class GameSettings : MonoBehaviour
     public void SetMusic(float level)
     {
         gameAudioManager.SetMusicVolume(level);
+    }
+
+    public void SetSFX(float level)
+    {
+        gameAudioManager.SetSFXVolume(level);
     }
 
     public void CloseSettings()

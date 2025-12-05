@@ -6,7 +6,6 @@ public class OptionsController : MonoBehaviour
 {
     [Header("Controller Settings")]
     [SerializeField] public GameObject optionsPrefab;
-    [SerializeField] public AudioManager audioManager;
     [SerializeField] public Transform parentContainer;
     [SerializeField] public CanvasGroup buttons;
 
@@ -22,7 +21,7 @@ public class OptionsController : MonoBehaviour
         GameSettings settingsScript = options.GetComponent<GameSettings>();
         if (settingsScript != null)
         {
-            settingsScript.Initialize(audioManager);
+            settingsScript.Initialize(AudioManager.instance);
         }
         InputBlocker.Interactible = false;
     }
