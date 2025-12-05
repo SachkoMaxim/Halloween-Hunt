@@ -8,6 +8,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected int maxHealth = 1;
     [SerializeField] protected float moveSpeed = 0f;
     [SerializeField] protected float deathTime = 0f;
+    [SerializeField] protected AudioClip testClip;
 
     protected Rigidbody2D rb;
     protected Animator animator;
@@ -116,6 +117,7 @@ public abstract class Character : MonoBehaviour
     protected virtual IEnumerator Die(float time)
     {
         DisableCharacter();
+        AudioManager.instance.PlaySFXClip(testClip, transform);
         animator.SetTrigger(dead);
 
         yield return new WaitForSeconds(time);
