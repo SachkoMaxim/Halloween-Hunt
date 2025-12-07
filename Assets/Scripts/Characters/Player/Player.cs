@@ -9,6 +9,7 @@ public class Player : Character
     [Header("References")]
     [SerializeField] public Transform shootPoint;
     [SerializeField] public GameObject playerMarker;
+    [SerializeField] public ParticleSystem deathParticle;
 
     [HideInInspector] public Vector2 attackDirection;
     public static event Action OnPlayerDied;
@@ -42,6 +43,7 @@ public class Player : Character
 
     protected override IEnumerator Die(float time)
     {
+        deathParticle.Play();
         yield return StartCoroutine(base.Die(time));
         OnPlayerDied.Invoke();
     }
