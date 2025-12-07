@@ -87,7 +87,17 @@ public class GameController : MonoBehaviour
     public void Next()
     {
         levelIntroShown = false;
-        StartCoroutine(SceneTransition(SceneManager.GetActiveScene().buildIndex + 1));
+
+        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (nextScene < 0 || nextScene >= SceneManager.sceneCountInBuildSettings)
+        {
+            StartCoroutine(SceneTransition("Level Select"));
+        }
+        else
+        {
+            StartCoroutine(SceneTransition(nextScene));
+        }
     }
 
     public void EnemyDied(Enemy e)
