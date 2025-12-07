@@ -8854,7 +8854,6 @@ MonoBehaviour:
   deathTime: 0.55
   testClip: {fileID: 8300000, guid: 8dc0bc608dd100f499085e1d6d920a55, type: 3}
   aiUpdateDelay: 0.2
-  attackDelay: 1
   detectionDelay: 0.05
   stopDistance: 1
   enemyAI: {fileID: 1390050148}
@@ -9014,7 +9013,8 @@ MonoBehaviour:
   attackDistance: 1
   attackCooldown: 2.5
   attackPoint: {fileID: 178361406}
-  stopDuration: 1
+  stopDuration: 0.75
+  attackDuration: 0.5
   attackDamage: 1
   playerLayer:
     serializedVersion: 2
@@ -10240,7 +10240,8 @@ MonoBehaviour:
   attackDistance: 3.5
   attackCooldown: 5
   attackPoint: {fileID: 1591476267}
-  stopDuration: 1
+  stopDuration: 0.25
+  attackDuration: 2
   attackDamage: 1
   playerLayer:
     serializedVersion: 2
@@ -10385,7 +10386,6 @@ MonoBehaviour:
   deathTime: 0.55
   testClip: {fileID: 8300000, guid: 7f703a51730374c4d89dc9af5bc3bfdb, type: 3}
   aiUpdateDelay: 0.2
-  attackDelay: 1
   detectionDelay: 0.05
   stopDistance: 1
   enemyAI: {fileID: 1727372927}

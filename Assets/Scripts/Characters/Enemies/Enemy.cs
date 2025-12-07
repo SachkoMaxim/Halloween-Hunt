@@ -6,7 +6,6 @@ public class Enemy : Character
 {
     [Header("AI Settings")]
     [SerializeField] private float aiUpdateDelay = 0f;
-    [SerializeField] private float attackDelay = 0f;
     [SerializeField] private float detectionDelay = 0f;
     [SerializeField] private float stopDistance = 0f;
 

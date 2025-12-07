@@ -9,6 +9,7 @@ public abstract class EnemyAttack : MonoBehaviour
     [SerializeField] protected float attackCooldown = 0f;
     [SerializeField] protected Transform attackPoint;
     [SerializeField] protected float stopDuration = 0f;
+    [SerializeField] private float attackDuration = 0f;
 
     [Header("Damage Settings")]
     [SerializeField] protected int attackDamage = 0;
@@ -67,6 +68,8 @@ public abstract class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(stopDuration);
 
         PerformAttack();
+
+        yield return new WaitForSeconds(attackDuration);
 
         lastAttackTime = Time.time;
         attackPoint.localPosition = Vector2.zero;
