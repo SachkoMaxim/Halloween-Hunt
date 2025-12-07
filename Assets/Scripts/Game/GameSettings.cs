@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
@@ -40,5 +41,12 @@ public class GameSettings : MonoBehaviour
     public void CloseSettings()
     {
         Destroy(gameObject);
+    }
+
+    public void DeleteSaves()
+    {
+        PlayerPrefs.DeleteAll();
+        Destroy(gameAudioManager.gameObject);
+        SceneManager.LoadSceneAsync("Main Menu");
     }
 }
