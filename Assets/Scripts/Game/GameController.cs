@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] public GameObject gameOverScreen;
     [SerializeField] public GameObject pauseScreen;
     [SerializeField] public GameObject winScreen;
-    [SerializeField] public Animator transitionAnim;
+    [SerializeField] public SceneTransition sceneTransition;
 
     [Header("Audio Clips")]
     [SerializeField] protected AudioClip ambience;
@@ -26,13 +26,11 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         enemies.AddRange(FindObjectsOfType<Enemy>());
-        transitionAnim.gameObject.SetActive(true);
-        transitionAnim.speed = 1f;
+        StartCoroutine(sceneTransition.BeginningTransition());
     }
 
     void Start()
     {
-        StartCoroutine(BeginningTransition());
         Player.OnPlayerDied += GameOverScreen;
         gameOverScreen.SetActive(false);
         AudioManager.instance.PlayAmbience(ambience);
@@ -55,7 +53,10 @@ public class GameController : MonoBehaviour
     private void OnDestroy()
     {
         Player.OnPlayerDied -= GameOverScreen;
-        AudioManager.instance?.StopAmbience();
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance?.StopAmbience();
+        }
     }
 
     public void GameOverScreen()
@@ -79,7 +80,7 @@ public class GameController : MonoBehaviour
     public void BackHome()
     {
         levelIntroShown = false;
-        StartCoroutine(SceneTransition("Level Select"));
+        StartCoroutine(sceneTransition.EndTransition("Level Select"));
     }
 
     public void Continue()
@@ -92,7 +93,7 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
         winScreen.SetActive(false);
-        StartCoroutine(SceneTransition(SceneManager.GetActiveScene().name));
+        StartCoroutine(sceneTransition.EndTransition(SceneManager.GetActiveScene().name));
     }
 
     public void Next()
@@ -103,11 +104,11 @@ public class GameController : MonoBehaviour
 
         if (nextScene < 0 || nextScene >= SceneManager.sceneCountInBuildSettings)
         {
-            StartCoroutine(SceneTransition("Level Select"));
+            StartCoroutine(sceneTransition.EndTransition("Level Select"));
         }
         else
         {
-            StartCoroutine(SceneTransition(nextScene));
+            StartCoroutine(sceneTransition.EndTransition(nextScene));
         }
     }
 
@@ -147,30 +148,5 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
 
         levelIntro.SetActive(false);
-    }
-
-    private IEnumerator BeginningTransition()
-    {
-        Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(1f);
-
-        InputBlocker.Blocked = false;
-        Time.timeScale = 1;
-    }
-
-    private IEnumerator SceneTransition(string sceneName)
-    {
-        transitionAnim.SetTrigger("end");
-        yield return new WaitForSecondsRealtime(1f);
-
-        yield return SceneManager.LoadSceneAsync(sceneName);
-    }
-
-    private IEnumerator SceneTransition(int sceneIndex)
-    {
-        transitionAnim.SetTrigger("end");
-        yield return new WaitForSecondsRealtime(1f);
-
-        yield return SceneManager.LoadSceneAsync(sceneIndex);
     }
 }
