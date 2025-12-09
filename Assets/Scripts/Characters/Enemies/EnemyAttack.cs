@@ -67,6 +67,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
         yield return new WaitForSeconds(stopDuration);
 
+        AudioManager.instance.PlaySFXClip(enemy.attackClip, transform);
         PerformAttack();
 
         yield return new WaitForSeconds(attackDuration);

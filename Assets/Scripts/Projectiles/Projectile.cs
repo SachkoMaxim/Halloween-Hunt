@@ -10,6 +10,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] private int projectileDamage = 0;
     [SerializeField] private LayerMask wallLayer;
 
+    [Header("Audio Clips")]
+    [SerializeField] protected AudioClip destroyedClip;
+
     private Vector2 direction;
     private Vector2 startPosition;
     private Rigidbody2D rb;
@@ -52,6 +55,7 @@ public class Projectile : MonoBehaviour
         float distanceTraveled = Vector2.Distance(startPosition, transform.position);
         if (distanceTraveled >= maxDistance)
         {
+            AudioManager.instance.PlaySFXClip(destroyedClip, transform);
             Destroy(gameObject);
         }
     }
@@ -84,6 +88,7 @@ public class Projectile : MonoBehaviour
             }
             else
             {
+                AudioManager.instance.PlaySFXClip(destroyedClip, transform);
                 Destroy(gameObject);
                 return;
             }

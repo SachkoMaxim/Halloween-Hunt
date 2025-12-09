@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject levelIntro;
-    public GameObject gameOverScreen;
-    public GameObject pauseScreen;
-    public GameObject winScreen;
-    public Animator transitionAnim;
+    [Header("Refences")]
+    [SerializeField] public GameObject levelIntro;
+    [SerializeField] public GameObject gameOverScreen;
+    [SerializeField] public GameObject pauseScreen;
+    [SerializeField] public GameObject winScreen;
+    [SerializeField] public Animator transitionAnim;
+
+    [Header("Audio Clips")]
+    [SerializeField] protected AudioClip ambience;
+    [SerializeField] protected AudioClip pauseClip;
+    [SerializeField] protected AudioClip looseClip;
+    [SerializeField] protected AudioClip winClip;
 
     private List<Enemy> enemies = new List<Enemy>();
     private bool canOpen = true;
@@ -28,6 +35,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(BeginningTransition());
         Player.OnPlayerDied += GameOverScreen;
         gameOverScreen.SetActive(false);
+        AudioManager.instance.PlayAmbience(ambience);
 
         if (!levelIntroShown)
         {
@@ -47,10 +55,12 @@ public class GameController : MonoBehaviour
     private void OnDestroy()
     {
         Player.OnPlayerDied -= GameOverScreen;
+        AudioManager.instance?.StopAmbience();
     }
 
     public void GameOverScreen()
     {
+        AudioManager.instance.PlaySFXClip(looseClip, transform);
         gameOverScreen.SetActive(true);
         InputBlocker.Blocked = true;
         Time.timeScale = 0;
@@ -58,6 +68,7 @@ public class GameController : MonoBehaviour
 
     public void PauseScreen(bool isActive)
     {
+        AudioManager.instance.PlaySFXClip(pauseClip, transform);
         pauseScreen.SetActive(isActive);
         EventSystem.current.SetSelectedGameObject(null);
         InputBlocker.Blocked = isActive;
@@ -123,6 +134,7 @@ public class GameController : MonoBehaviour
 
     private void WinScreen()
     {
+        AudioManager.instance.PlaySFXClip(winClip, transform);
         winScreen.SetActive(true);
         InputBlocker.Blocked = true;
         Time.timeScale = 0;

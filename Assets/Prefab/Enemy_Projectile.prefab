@@ -168,6 +168,7 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
+  destroyedClip: {fileID: 8300000, guid: 7f703a51730374c4d89dc9af5bc3bfdb, type: 3}
 --- !u!114 &3186008000083400126
 MonoBehaviour:
   m_ObjectHideFlags: 0

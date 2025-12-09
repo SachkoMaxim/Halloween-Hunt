@@ -56,6 +56,7 @@ public class PlayerShoot : MonoBehaviour
         }
 
         player.Attacking();
+        AudioManager.instance.PlaySFXClip(player.attackClip, transform);
         Vector2 spawnPosition = (Vector2)player.shootPoint.position + player.attackDirection * startOffset;
         GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 

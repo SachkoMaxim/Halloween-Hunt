@@ -8,7 +8,11 @@ public abstract class Character : MonoBehaviour
     [SerializeField] protected int maxHealth = 1;
     [SerializeField] protected float moveSpeed = 0f;
     [SerializeField] protected float deathTime = 0f;
-    [SerializeField] protected AudioClip testClip;
+
+    [Header("Audio Clips")]
+    [SerializeField] public AudioClip attackClip;
+    [SerializeField] protected AudioClip damagedClip;
+    [SerializeField] protected AudioClip deathClip;
 
     protected Rigidbody2D rb;
     protected Animator animator;
@@ -58,6 +62,7 @@ public abstract class Character : MonoBehaviour
 
     public virtual void OnDamaged()
     {
+        AudioManager.instance.PlaySFXClip(damagedClip, transform);
         animator.SetTrigger(flashRed);
     }
 
@@ -117,7 +122,7 @@ public abstract class Character : MonoBehaviour
     protected virtual IEnumerator Die(float time)
     {
         DisableCharacter();
-        AudioManager.instance.PlaySFXClip(testClip, transform);
+        AudioManager.instance.PlaySFXClip(deathClip, transform);
         animator.SetTrigger(dead);
 
         yield return new WaitForSeconds(time);

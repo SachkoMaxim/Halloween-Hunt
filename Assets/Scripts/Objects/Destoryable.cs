@@ -11,6 +11,10 @@ public class Destoryable : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject destroyedPrefab;
 
+    [Header("Audio Clips")]
+    [SerializeField] protected AudioClip damagedClip;
+    [SerializeField] protected AudioClip destroyedClip;
+
     private SpriteRenderer spriteRenderer;
     private int currentHealth;
 
@@ -26,10 +30,12 @@ public class Destoryable : MonoBehaviour
 
         if (currentHealth == 1)
         {
+            AudioManager.instance.PlaySFXClip(damagedClip, transform);
             spriteRenderer.sprite = newSprite;
         }
         else if (currentHealth <= 0)
         {
+            AudioManager.instance.PlaySFXClip(destroyedClip, transform);
             Instantiate(destroyedPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

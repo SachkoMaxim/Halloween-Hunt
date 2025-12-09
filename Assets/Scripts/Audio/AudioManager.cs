@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     [Header("Music Settings")]
     [SerializeField] public AudioSource musicSource;
+    [SerializeField] public AudioSource ambienceSource;
     [SerializeField] public AudioSource SFXSource;
     [SerializeField] public AudioClip background;
     [SerializeField] public AudioMixer gameMixer;
@@ -52,6 +53,21 @@ public class AudioManager : MonoBehaviour
     public float GetMusicVolume()
     {
         return PlayerPrefs.HasKey("MusicVolumeKey") ? PlayerPrefs.GetFloat("MusicVolumeKey") : 1.0f;
+    }
+
+    public void PlayAmbience(AudioClip audioClip)
+    {
+        ambienceSource.clip = audioClip;
+        ambienceSource.Play();
+    }
+
+    public void StopAmbience()
+    {
+        if (ambienceSource != null)
+        {
+            ambienceSource.Stop();
+        }
+        ambienceSource.clip = null;
     }
 
     public void SetSFXVolume(float level)
