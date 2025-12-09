@@ -18,8 +18,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - EnemyWall
+  - OutBounds
   - PlayerHitbox
   - EnemyHitbox
   - 
