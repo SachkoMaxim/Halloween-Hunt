@@ -1,0 +1,427 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: ArmoredSkeleton_0
+      m_Hash: 326234367
+      m_Sprite: {fileID: -1664054065, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1664054065, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_1
+      m_Hash: 611762281
+      m_Sprite: {fileID: -1072480715, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1072480715, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_2
+      m_Hash: 1031770579
+      m_Sprite: {fileID: -102144587, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -102144587, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_3
+      m_Hash: 175677765
+      m_Sprite: {fileID: 1323111891, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1323111891, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_4
+      m_Hash: 337392870
+      m_Sprite: {fileID: 759397397, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 759397397, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_5
+      m_Hash: 588973168
+      m_Sprite: {fileID: 294675856, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 294675856, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_6
+      m_Hash: 974280138
+      m_Sprite: {fileID: -1013867590, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1013867590, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_7
+      m_Hash: 219506012
+      m_Sprite: {fileID: 536048384, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 536048384, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 8
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: ArmoredSkeleton_8
+      m_Hash: 497711309
+      m_Sprite: {fileID: 1605472945, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1605472945, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_9
+      m_Hash: 715999323
+      m_Sprite: {fileID: -338714002, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -338714002, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_10
+      m_Hash: 5337117
+      m_Sprite: {fileID: 1429487348, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1429487348, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_11
+      m_Hash: 928399499
+      m_Sprite: {fileID: 334700953, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 334700953, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_12
+      m_Hash: 777982257
+      m_Sprite: {fileID: -476505100, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -476505100, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_13
+      m_Hash: 425206183
+      m_Sprite: {fileID: -49416179, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -49416179, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_14
+      m_Hash: 121418756
+      m_Sprite: {fileID: -1648501342, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1648501342, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_15
+      m_Hash: 809206930
+      m_Sprite: {fileID: -756043782, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -756043782, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_16
+      m_Hash: 691197224
+      m_Sprite: {fileID: -692274553, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -692274553, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_17
+      m_Hash: 506848702
+      m_Sprite: {fileID: 1748555241, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1748555241, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_18
+      m_Hash: 243988527
+      m_Sprite: {fileID: 1387432485, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1387432485, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_19
+      m_Hash: 965593273
+      m_Sprite: {fileID: 1793769515, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1793769515, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_20
+      m_Hash: 729555934
+      m_Sprite: {fileID: 1345690800, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1345690800, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_21
+      m_Hash: 477827912
+      m_Sprite: {fileID: -1557122717, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1557122717, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_22
+      m_Hash: 91374322
+      m_Sprite: {fileID: -1293674794, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1293674794, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_23
+      m_Hash: 846557796
+      m_Sprite: {fileID: 111327317, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 111327317, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  - m_Name: Attack
+    m_Hash: 7088141
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: ArmoredSkeleton_24
+      m_Hash: 739370951
+      m_Sprite: {fileID: -498078117, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -498078117, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_25
+      m_Hash: 454481745
+      m_Sprite: {fileID: -481197949, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -481197949, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_26
+      m_Hash: 35620587
+      m_Sprite: {fileID: -1446920159, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1446920159, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_27
+      m_Hash: 890812029
+      m_Sprite: {fileID: 1510421015, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1510421015, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_28
+      m_Hash: 631745516
+      m_Sprite: {fileID: -121762035, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -121762035, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_29
+      m_Hash: 312515450
+      m_Sprite: {fileID: -1207571171, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1207571171, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_30
+      m_Hash: 845615775
+      m_Sprite: {fileID: -1444062309, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1444062309, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_31
+      m_Hash: 90186249
+      m_Sprite: {fileID: 1001358277, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1001358277, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_32
+      m_Hash: 476672947
+      m_Sprite: {fileID: -1808400987, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1808400987, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_33
+      m_Hash: 728646437
+      m_Sprite: {fileID: 1098508622, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1098508622, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_34
+      m_Hash: 889902726
+      m_Sprite: {fileID: -243141047, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -243141047, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_35
+      m_Hash: 34465296
+      m_Sprite: {fileID: -1042892222, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1042892222, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_36
+      m_Hash: 453293994
+      m_Sprite: {fileID: -2009327900, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2009327900, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_37
+      m_Hash: 738428732
+      m_Sprite: {fileID: 1816916242, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1816916242, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_38
+      m_Hash: 1018993325
+      m_Sprite: {fileID: 953648088, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 953648088, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_39
+      m_Hash: 196848187
+      m_Sprite: {fileID: 724309910, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 724309910, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_40
+      m_Hash: 1025934424
+      m_Sprite: {fileID: 1963548095, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1963548095, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_41
+      m_Hash: 169981134
+      m_Sprite: {fileID: 470655104, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 470655104, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_42
+      m_Hash: 321447284
+      m_Sprite: {fileID: -1368454735, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1368454735, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_43
+      m_Hash: 607114722
+      m_Sprite: {fileID: 885459983, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 885459983, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_44
+      m_Hash: 978010177
+      m_Sprite: {fileID: 1480057924, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1480057924, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_45
+      m_Hash: 223113431
+      m_Sprite: {fileID: -530960513, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -530960513, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_46
+      m_Hash: 340074861
+      m_Sprite: {fileID: -1152557294, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1152557294, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_47
+      m_Hash: 591532539
+      m_Sprite: {fileID: 1538167238, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1538167238, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_48
+      m_Hash: 872221802
+      m_Sprite: {fileID: 1970666939, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1970666939, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_49
+      m_Hash: 83508476
+      m_Sprite: {fileID: 1255708756, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1255708756, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_50
+      m_Hash: 608023833
+      m_Sprite: {fileID: 1246439568, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1246439568, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_51
+      m_Hash: 322602383
+      m_Sprite: {fileID: 1637824296, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1637824296, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_52
+      m_Hash: 171168821
+      m_Sprite: {fileID: 1943415710, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1943415710, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_53
+      m_Hash: 1026876579
+      m_Sprite: {fileID: -1872842625, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1872842625, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_54
+      m_Hash: 592474368
+      m_Sprite: {fileID: -754520432, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -754520432, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_55
+      m_Hash: 341262742
+      m_Sprite: {fileID: 196672991, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 196672991, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_56
+      m_Hash: 224268332
+      m_Sprite: {fileID: 324512699, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 324512699, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_57
+      m_Hash: 978919610
+      m_Sprite: {fileID: -1144177535, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1144177535, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_58
+      m_Hash: 719732011
+      m_Sprite: {fileID: 252368808, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 252368808, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_59
+      m_Hash: 501288381
+      m_Sprite: {fileID: 1187583281, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1187583281, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_60
+      m_Hash: 252765914
+      m_Sprite: {fileID: -1993809064, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1993809064, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_61
+      m_Hash: 941086284
+      m_Sprite: {fileID: 1680701861, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1680701861, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_62
+      m_Hash: 555649014
+      m_Sprite: {fileID: 275312344, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 275312344, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_63
+      m_Hash: 370784096
+      m_Sprite: {fileID: 1952801438, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1952801438, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_64
+      m_Hash: 142418627
+      m_Sprite: {fileID: -1488364375, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1488364375, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_65
+      m_Hash: 1064964693
+      m_Sprite: {fileID: -1951285194, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1951285194, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_66
+      m_Hash: 645088239
+      m_Sprite: {fileID: -43773966, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -43773966, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_67
+      m_Hash: 292844409
+      m_Sprite: {fileID: 1622627460, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1622627460, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_68
+      m_Hash: 30109416
+      m_Sprite: {fileID: -1179433139, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1179433139, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_69
+      m_Hash: 919363198
+      m_Sprite: {fileID: 515607671, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 515607671, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_70
+      m_Hash: 369874843
+      m_Sprite: {fileID: 1174225704, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1174225704, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_71
+      m_Hash: 554493709
+      m_Sprite: {fileID: -1717011288, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1717011288, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 48
+  - m_Name: Death
+    m_Hash: 646380074
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: ArmoredSkeleton_72
+      m_Hash: 939898551
+      m_Sprite: {fileID: 774686446, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 774686446, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_73
+      m_Hash: 251823649
+      m_Sprite: {fileID: -1933671430, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1933671430, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_74
+      m_Hash: 291902338
+      m_Sprite: {fileID: -813015002, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -813015002, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_75
+      m_Hash: 643900180
+      m_Sprite: {fileID: -1152143990, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1152143990, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    - m_Name: ArmoredSkeleton_76
+      m_Hash: 1063809710
+      m_Sprite: {fileID: -1772122231, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1772122231, guid: e45074b0ff845db4c970c1bae4f7a403, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639010098740321968
+  m_Version: 1
