@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: EvilTree_0
+      m_Hash: 369165647
+      m_Sprite: {fileID: -1674182916, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1674182916, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_1
+      m_Hash: 554055129
+      m_Sprite: {fileID: 1964234436, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1964234436, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_2
+      m_Hash: 940532835
+      m_Sprite: {fileID: 846000231, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 846000231, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_3
+      m_Hash: 252204277
+      m_Sprite: {fileID: 1030972991, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1030972991, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
+  - m_Name: Attack
+    m_Hash: 7088141
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: EvilTree_4
+      m_Hash: 292340054
+      m_Sprite: {fileID: -1838062034, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1838062034, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_5
+      m_Hash: 644608448
+      m_Sprite: {fileID: -2102256733, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2102256733, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_6
+      m_Hash: 1063428218
+      m_Sprite: {fileID: 999685567, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 999685567, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_7
+      m_Hash: 140873964
+      m_Sprite: {fileID: -1996191255, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1996191255, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_8
+      m_Hash: 416976253
+      m_Sprite: {fileID: -2134281156, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2134281156, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  - m_Name: Death
+    m_Hash: 646380074
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: EvilTree_9
+      m_Hash: 803061227
+      m_Sprite: {fileID: 1164062460, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1164062460, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_10
+      m_Hash: 192263012
+      m_Sprite: {fileID: 1297812680, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1297812680, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_11
+      m_Hash: 1014137842
+      m_Sprite: {fileID: 1809386174, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1809386174, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_12
+      m_Hash: 628871752
+      m_Sprite: {fileID: -507764207, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -507764207, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    - m_Name: EvilTree_13
+      m_Hash: 310174430
+      m_Sprite: {fileID: 188017504, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 188017504, guid: ad4e1f6725295824e9a830307112a0fa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639010130315998451
+  m_Version: 1

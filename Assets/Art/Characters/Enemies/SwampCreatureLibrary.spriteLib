@@ -1,0 +1,267 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SwampCreature_0
+      m_Hash: 929834522
+      m_Sprite: {fileID: 1090539056, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1090539056, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_1
+      m_Hash: 7018124
+      m_Sprite: {fileID: -771980927, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -771980927, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_2
+      m_Hash: 425871158
+      m_Sprite: {fileID: 1596960048, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1596960048, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_3
+      m_Hash: 778401696
+      m_Sprite: {fileID: 470909987, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 470909987, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_4
+      m_Hash: 805429763
+      m_Sprite: {fileID: -1167170160, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1167170160, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_5
+      m_Hash: 117887637
+      m_Sprite: {fileID: -1941497166, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1941497166, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_6
+      m_Hash: 504333103
+      m_Sprite: {fileID: 264173660, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 264173660, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_7
+      m_Hash: 688436153
+      m_Sprite: {fileID: -2113816439, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2113816439, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 8
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SwampCreature_8
+      m_Hash: 968338984
+      m_Sprite: {fileID: -811673877, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -811673877, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_9
+      m_Hash: 246455998
+      m_Sprite: {fileID: -138137346, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -138137346, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_10
+      m_Hash: 282426172
+      m_Sprite: {fileID: -1129613566, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1129613566, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_11
+      m_Hash: 668093354
+      m_Sprite: {fileID: 444354559, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 444354559, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_12
+      m_Hash: 1054546448
+      m_Sprite: {fileID: 693505052, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 693505052, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_13
+      m_Hash: 165423750
+      m_Sprite: {fileID: -1903751489, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1903751489, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_14
+      m_Hash: 397983525
+      m_Sprite: {fileID: 1375308721, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1375308721, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_15
+      m_Hash: 549425075
+      m_Sprite: {fileID: -658430679, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -658430679, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_16
+      m_Hash: 968285705
+      m_Sprite: {fileID: -118712717, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -118712717, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_17
+      m_Hash: 246541983
+      m_Sprite: {fileID: -964385104, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -964385104, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_18
+      m_Hash: 504296206
+      m_Sprite: {fileID: 888845269, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 888845269, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_19
+      m_Hash: 688505752
+      m_Sprite: {fileID: 1919824822, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1919824822, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_20
+      m_Hash: 1006119167
+      m_Sprite: {fileID: 1810099921, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1810099921, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_21
+      m_Hash: 218044521
+      m_Sprite: {fileID: -979548088, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -979548088, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_22
+      m_Hash: 368462291
+      m_Sprite: {fileID: 687063678, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 687063678, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_23
+      m_Hash: 586250565
+      m_Sprite: {fileID: 2049352702, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2049352702, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  - m_Name: Attack
+    m_Hash: 7088141
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SwampCreature_24
+      m_Hash: 1016458470
+      m_Sprite: {fileID: 1344367547, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1344367547, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_25
+      m_Hash: 194174064
+      m_Sprite: {fileID: 1053198339, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1053198339, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_26
+      m_Hash: 312184266
+      m_Sprite: {fileID: 1902355899, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1902355899, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_27
+      m_Hash: 631029084
+      m_Sprite: {fileID: 787664582, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 787664582, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_28
+      m_Hash: 891527373
+      m_Sprite: {fileID: -1838722058, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1838722058, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_29
+      m_Hash: 35950683
+      m_Sprite: {fileID: -727808793, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -727808793, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_30
+      m_Hash: 585308606
+      m_Sprite: {fileID: -2102314051, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2102314051, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_31
+      m_Hash: 367274280
+      m_Sprite: {fileID: 810884261, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 810884261, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_32
+      m_Hash: 216889490
+      m_Sprite: {fileID: 1109438765, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1109438765, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_33
+      m_Hash: 1005209604
+      m_Sprite: {fileID: -712238042, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -712238042, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_34
+      m_Hash: 630119847
+      m_Sprite: {fileID: -807075245, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -807075245, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_35
+      m_Hash: 311029041
+      m_Sprite: {fileID: 94797285, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 94797285, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_36
+      m_Hash: 192986251
+      m_Sprite: {fileID: -887315217, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -887315217, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_37
+      m_Hash: 1015516189
+      m_Sprite: {fileID: 1594424036, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1594424036, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_38
+      m_Hash: 741904780
+      m_Sprite: {fileID: 1732359080, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1732359080, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_39
+      m_Hash: 457154842
+      m_Sprite: {fileID: 1240639907, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1240639907, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  - m_Name: Death
+    m_Hash: 646380074
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SwampCreature_40
+      m_Hash: 765628281
+      m_Sprite: {fileID: 29020652, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 29020652, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_41
+      m_Hash: 447070191
+      m_Sprite: {fileID: -909490042, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -909490042, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_42
+      m_Hash: 61664853
+      m_Sprite: {fileID: -717084377, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -717084377, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_43
+      m_Hash: 883678915
+      m_Sprite: {fileID: 1039763014, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1039763014, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    - m_Name: SwampCreature_44
+      m_Hash: 718228320
+      m_Sprite: {fileID: 2125404723, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2125404723, guid: 2e9f9dcca671fd948b64eb5041f5649e, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639010132232893232
+  m_Version: 1

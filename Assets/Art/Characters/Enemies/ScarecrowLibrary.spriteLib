@@ -1,0 +1,237 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Scarecrow_0
+      m_Hash: 681308958
+      m_Sprite: {fileID: 824008553, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 824008553, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_1
+      m_Hash: 530367368
+      m_Sprite: {fileID: -127396641, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -127396641, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Scarecrow_2
+      m_Hash: 110465586
+      m_Sprite: {fileID: -157311279, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -157311279, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_3
+      m_Hash: 831693476
+      m_Sprite: {fileID: -1163555204, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1163555204, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_4
+      m_Hash: 804665095
+      m_Sprite: {fileID: -516438731, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -516438731, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_5
+      m_Hash: 418449297
+      m_Sprite: {fileID: -275402621, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -275402621, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_6
+      m_Hash: 33052203
+      m_Sprite: {fileID: 1637526667, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1637526667, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_7
+      m_Hash: 922707645
+      m_Sprite: {fileID: 1591508817, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1591508817, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_8
+      m_Hash: 641760044
+      m_Sprite: {fileID: 2033804026, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2033804026, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_9
+      m_Hash: 289885114
+      m_Sprite: {fileID: 121858950, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 121858950, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_10
+      m_Hash: 388450544
+      m_Sprite: {fileID: -476546293, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -476546293, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_11
+      m_Hash: 538998886
+      m_Sprite: {fileID: 656355443, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 656355443, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_12
+      m_Hash: 958999004
+      m_Sprite: {fileID: -933199444, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -933199444, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_13
+      m_Hash: 237902154
+      m_Sprite: {fileID: -988435878, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -988435878, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_14
+      m_Hash: 273321193
+      m_Sprite: {fileID: -817888154, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -817888154, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_15
+      m_Hash: 659405951
+      m_Sprite: {fileID: 1186162310, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1186162310, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_16
+      m_Hash: 1044704709
+      m_Sprite: {fileID: -1431241475, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1431241475, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_17
+      m_Hash: 155442515
+      m_Sprite: {fileID: 1788522416, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1788522416, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  - m_Name: Attack
+    m_Hash: 7088141
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Scarecrow_18
+      m_Hash: 435994818
+      m_Sprite: {fileID: 1071627016, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1071627016, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_19
+      m_Hash: 788262996
+      m_Sprite: {fileID: 697193294, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 697193294, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_20
+      m_Hash: 1007295283
+      m_Sprite: {fileID: 574864288, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 574864288, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_21
+      m_Hash: 185412517
+      m_Sprite: {fileID: 1299660748, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1299660748, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_22
+      m_Hash: 302283295
+      m_Sprite: {fileID: -171787759, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -171787759, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_23
+      m_Hash: 620972681
+      m_Sprite: {fileID: -613675156, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -613675156, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_24
+      m_Hash: 996663082
+      m_Sprite: {fileID: -690726125, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -690726125, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_25
+      m_Hash: 207679420
+      m_Sprite: {fileID: -1935806086, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1935806086, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_26
+      m_Hash: 359251462
+      m_Sprite: {fileID: -987735564, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -987735564, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_27
+      m_Hash: 577670800
+      m_Sprite: {fileID: -144604836, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -144604836, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_28
+      m_Hash: 852595457
+      m_Sprite: {fileID: 1025960208, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1025960208, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_29
+      m_Hash: 97952663
+      m_Sprite: {fileID: 1066778420, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1066778420, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_30
+      m_Hash: 621881970
+      m_Sprite: {fileID: 1204936822, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1204936822, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_31
+      m_Hash: 303438564
+      m_Sprite: {fileID: -1052666415, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1052666415, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_32
+      m_Hash: 186600286
+      m_Sprite: {fileID: -1749749688, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1749749688, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_33
+      m_Hash: 1008237512
+      m_Sprite: {fileID: -24737347, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -24737347, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 16
+  - m_Name: Death
+    m_Hash: 646380074
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Scarecrow_34
+      m_Hash: 578612843
+      m_Sprite: {fileID: -1453019933, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1453019933, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_35
+      m_Hash: 360439549
+      m_Sprite: {fileID: -2042702207, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2042702207, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_36
+      m_Hash: 208834375
+      m_Sprite: {fileID: 2068121545, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2068121545, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_37
+      m_Hash: 997572561
+      m_Sprite: {fileID: 491720554, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 491720554, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    - m_Name: Scarecrow_38
+      m_Hash: 734700096
+      m_Sprite: {fileID: -1041273490, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1041273490, guid: 2f61d0786cb4f9d4d925b335c19f9542, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639010131410624183
+  m_Version: 1
