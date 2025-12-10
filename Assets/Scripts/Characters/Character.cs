@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public abstract class Character : MonoBehaviour
 {
@@ -76,6 +77,12 @@ public abstract class Character : MonoBehaviour
 
         foreach (var col in GetComponentsInChildren<Collider2D>())
             col.enabled = false;
+
+        SpriteResolver spriteResolver = GetComponent<SpriteResolver>();
+        if (spriteResolver != null)
+        {
+            spriteResolver.enabled = true;
+        }
     }
 
     public virtual void UpdateMovement(float x, float y)
